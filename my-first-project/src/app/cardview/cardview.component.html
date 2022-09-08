@@ -1,0 +1,33 @@
+<app-test></app-test>
+<div  class = "forms-group" style="float:right; margin-top: -57px; margin-right: 116px; font-family: Verdana, Geneva, Tahoma, sans-serif; ">
+    <label>Filter :</label><br>
+    <input type="text" class="form-control search-field" placeholder="Search here" [(ngModel)]="search1">
+</div>
+
+<div class="box" style="display:flex;flex-wrap: wrap;">
+    <div *ngFor="let data of customers | search :search1 |  paginate : { itemsPerPage: 10, currentPage : p } " >
+    <div class="container" style="border:1px solid black; padding: 0;">
+            <div class="cv" style="background-color: #007af8; width: 100%;">
+                <label class="name">{{data.firstName +' '+ data.lastName}}</label>
+                <i class="fa fa-pencil-square-o" aria-hidden="true"
+                style="color:rgb(252, 249, 249); float: right; height: 10px;padding: 10px;"></i>
+             </div>
+            <div style="display:flex"> 
+                <div>
+                    <img *ngIf="data.gender=== 'male'" src="../assets/male.png" class="logo2" style="width:60px;height:60px;margin: 25px;">
+                    <img *ngIf="data.gender=== 'female'" src="../assets/female.png" class="logo2" style="width:60px;height:60px;margin: 25px;">
+                </div>
+                <div style="margin-top:20px;">
+                    <label>{{data.city}}</label><br>
+                    <label>{{data.state.name}}</label><br>
+                    <button style="color:#007af8; border:none; background: transparent; margin-left:-8px;">ViewOrders</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+    
+    
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
