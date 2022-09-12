@@ -12,7 +12,7 @@ import Customerdata from 'src/assets/customers.json';
 })
 export class ListviewComponent implements OnInit {
 
-  public customer: any;
+  // public customer: any;
   customers = Customerdata;
   search2 = '';
 
