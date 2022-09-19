@@ -29,9 +29,22 @@
       <h3>Customer Information</h3>
   </div>
   <div class="row">
-    <span class="col-sm-2 p-3 bg-white"><i class="fa fa-list subheader" routerLink="/CardviewComponent" routerActive="active"> Customer Details</i></span>
+    <span class="col-sm-2 p-3 bg-white"><i class="fa fa-list subheader"> Customer Details</i></span>
     <span class="col-sm-2 p-3 bg-white"><i class="fa fa-tag subheader"> Customer Orders</i></span>
     <span class="col-sm-2 p-3 bg-white"><i class="fa fa-pencil-square-o subheader"> Edit Customer</i></span>
   </div>
   </div>
+<div class="data">
+      <div>
+           <img *ngIf="customer.gender === 'male'" src="../../assets/male.png">
+           <img *ngIf="customer.gender === 'female'" src="../../assets/female.png">
+      </div>
+        <div>
+              {{customer.firstName}}
+              {{customer.lastName}}<br>
+              {{customer.address}}<br>
+              {{customer.city}}
+              {{customer.state.name}}
+        </div>
+</div>
 

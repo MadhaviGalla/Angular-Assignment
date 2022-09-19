@@ -19,11 +19,11 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let data of customers | search : search2 | paginate: {itemsPerPage: 10, currentPage : p }">   
+        <tr *ngFor="let data of customers | search : search2 ">   
             <td><img *ngIf="data.gender==='male'" src="../assets/male.png" style="height: 50px;">
                 <img *ngIf="data.gender==='female'" src="../assets/female.png" style="height: 50px;">
             </td>
-            <td routerLink="/DetailsComponent">{{data.firstName}}</td>
+            <td (click)="onClick(data)">{{data.firstName}}</td>
             <td>{{data.lastName}}</td>
             <td>{{data.address}}</td>
             <td>{{data.city}}</td>
@@ -34,4 +34,3 @@
     </tbody>
 </table>
 </div>
-<pagination-controls (pageChange) = "p=$event"></pagination-controls>

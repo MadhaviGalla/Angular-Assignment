@@ -10,16 +10,17 @@ export class LoginComponent implements OnInit {
 
   email:string | undefined;
   password: string | undefined;
+  erroremail : string | undefined;
+  errorpassword : string | undefined;
 
   loginUser(){
     if(this.email== "admin@gmail.com" && this.password== "Admin"){
       
       this.router.navigate(['CardviewComponent'])
-     
-
     }
     else{
-      alert("Please Check your Details")
+      this.erroremail = "Please enter valid Email";
+      this.errorpassword = "Please enter Valid Password";
     }
   }
 
