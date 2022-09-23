@@ -10,6 +10,7 @@ import { DetailsComponent } from './details/details.component';
 
 
 const routes: Routes = [
+  {path:"", redirectTo: '/LoginComponent', pathMatch:'full'},
   {path:"CardviewComponent",component:CardviewComponent},
   {path:"ListviewComponent",component:ListviewComponent},
   {path:"test-view",component:TestComponent},

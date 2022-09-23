@@ -39,3 +39,13 @@ img{
     padding: 10px;
     display: flex;
 }
+.row{
+    padding-left: 50px;
+}
+.btn{
+    border: none;
+    color: black;
+}
+.btn:hover{
+    color: grey;
+}

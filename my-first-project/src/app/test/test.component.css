@@ -90,3 +90,10 @@ h3{
 .row{
     margin-left: 50px;
 }
+.btn{
+    border: none;
+    color: grey;
+}
+.btn:hover{
+    color: black;
+}

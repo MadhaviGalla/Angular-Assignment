@@ -23,7 +23,7 @@
             <td><img *ngIf="data.gender==='male'" src="../assets/male.png" style="height: 50px;">
                 <img *ngIf="data.gender==='female'" src="../assets/female.png" style="height: 50px;">
             </td>
-            <td (click)="onClick(data)">{{data.firstName}}</td>
+            <td (click)="onClick(data)"><button class="btn btn-link">{{data.firstName}}</button></td>
             <td>{{data.lastName}}</td>
             <td>{{data.address}}</td>
             <td>{{data.city}}</td>
