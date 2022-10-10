@@ -27,13 +27,14 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { DialogComponent } from './dialog/dialog.component';
+import { GoogleMapsModule } from '@angular/google-maps';
 // import {AgmCoreModule} from '@agm/core';
 
 
 
 
 
-
+declare module 'googlemaps';
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,7 +63,7 @@ import { DialogComponent } from './dialog/dialog.component';
     NgxPaginationModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatToolbarModule,MatIconModule,MatButtonModule
+    MatToolbarModule,MatIconModule,MatButtonModule,GoogleMapsModule
   
   ],
   providers: [ ServiceService],
