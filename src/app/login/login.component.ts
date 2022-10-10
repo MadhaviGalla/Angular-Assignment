@@ -24,6 +24,10 @@ export class LoginComponent implements OnInit {
     }
   }
 
+  refresh(){
+    window.location.reload()
+  }
+
   constructor(private router:Router) { }
 
   ngOnInit(): void {

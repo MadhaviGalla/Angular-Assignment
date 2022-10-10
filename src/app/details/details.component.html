@@ -1,39 +1,11 @@
-<nav class="navbar navbar-expand-lg header">
-    <div class="container-fluid">
-        <img class="logo1" src="./assets/people.png">
-        <a class="navbar-brand" routerLink="/CardviewComponent">Customer Manager</a>
-        
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      
-      <div class="collapse navbar-collapse menu" id="navbarSupportedContent" >
-        <button type="button" class="btn btn-light">Customers</button>
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item ">
-            <a class="nav-link text" aria-current="page">Orders</a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link text" href="#">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text" routerLink="/LoginComponent">Logout</a>
-          </li>
-        </ul>
+<app-header></app-header>
+ <div class="row">
+     <span class="col-auto p-2 bg-white btn"><i class="fa fa-list subheader"><b> Customer Details</b> </i></span>
+    <div class="col-auto p-2 bg-white btn" ><i class="fa fa-tag subheader">Customer Orders</i>
       </div>
-    </div>
-  </nav>
-  <div class="container-fluid">
-    <div class="pic">
-      <img class="logo" src="./assets/pro.jpg">
-      <h3>Customer Information</h3>
-  </div>
-  <div class="row">
-    <span class="col-auto p-2 bg-white btn"><i class="fa fa-list subheader"><b> Customer Details</b> </i></span>
-    <span class="col-auto p-2 bg-white btn"><i class="fa fa-tag subheader"><b> Customer Orders</b> </i></span>
-    <span class="col-auto p-2 bg-white btn"><i class="fa fa-pencil-square-o subheader"><b> Edit Customer</b> </i></span>
-  </div>
-  </div>
+       <span class="col-auto p-2 bg-white btn" ><i class="fa fa-pencil-square-o subheader"><b> Edit Customer</b> </i></span>
+   </div>
+ 
 <div class="data">
       <div>
            <img *ngIf="customer.gender === 'male'" src="../../assets/male.png">

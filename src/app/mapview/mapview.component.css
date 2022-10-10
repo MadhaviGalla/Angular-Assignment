@@ -1,32 +1,4 @@
-.header{
-    background-color:  #007af8;
-}
-.navbar-brand{
-    color: white;
-}
-
-.logo{
-    padding: 10px;
-    height: 50px;
-    width: 50px;
-}
-.pic{
-    display: flex;
-}
-h3{
-    padding-top: 10px;
-}
-.ul li{
-    color: white;
-}
-.btn{
-    color: gray;
-    font-weight: bold;
-}
-.text{
-    color: white;
-    margin-left: 50px ;
-    font-weight: bold;
-    margin: 0;
-
+.full{
+  width: 100vw;
+  height: 100vw;
 }

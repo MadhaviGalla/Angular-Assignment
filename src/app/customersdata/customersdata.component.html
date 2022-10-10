@@ -1,1 +1,24 @@
 <p>customersdata works!</p>
+<table class="table table-striped">
+    <thead >
+        <tr>             
+            <th scope="col"> FirstName</th>
+            <th scope="col"> LastName</th>
+            <th scope="col">Orders</th>
+            <th scope="col">City</th>
+            <th scope="col">state</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let x of Customers">
+           <td>{{x.firstName}}</td>
+           <td>{{x.lastName}} </td>
+
+           <td>
+            <p *ngFor="let order of x.orders">{{order.productName}}</p>
+           </td>
+           <td>{{x.city}}</td>
+           <td>{{x.state.name}}</td>
+        </tr>
+    </tbody>
+</table>

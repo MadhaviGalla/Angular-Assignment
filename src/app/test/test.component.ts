@@ -38,6 +38,13 @@ export class TestComponent implements OnInit {
   Details(){
     this._router.navigate(['Details'])
   }
+  Oders(){
+    this._router.navigate(['OrdersComponent'])
+  }
+  new(){
+    this._router.navigate(['NewCustomer'])
+  }
+
 
 
 }

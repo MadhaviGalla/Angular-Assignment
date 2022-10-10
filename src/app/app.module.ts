@@ -18,6 +18,17 @@ import { MapviewComponent } from './mapview/mapview.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule }   from '@angular/forms';
 import { DetailsComponent } from './details/details.component';
+import { OrdersComponent } from './orders/orders.component';
+import { HeaderComponent } from './header/header.component';
+import { NewCustomerComponent } from './new-customer/new-customer.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import { DialogComponent } from './dialog/dialog.component';
+// import {AgmCoreModule} from '@agm/core';
+
 
 
 
@@ -34,6 +45,11 @@ import { DetailsComponent } from './details/details.component';
     MapviewComponent,
     LoginComponent,
     DetailsComponent,
+    OrdersComponent,
+    HeaderComponent,
+    NewCustomerComponent,
+    DialogComponent,
+   
    
 
   ],
@@ -44,10 +60,14 @@ import { DetailsComponent } from './details/details.component';
     RouterModule,HttpClientModule, NgbModule,
    
     NgxPaginationModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,MatIconModule,MatButtonModule
   
   ],
-  providers: [ ServiceService,],
+  providers: [ ServiceService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  
+}

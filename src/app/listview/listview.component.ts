@@ -24,13 +24,11 @@ export class ListviewComponent implements OnInit {
 
   ngOnInit() {
 
-    this.service1.getdata().subscribe((res: any) => {
+    this.service1.getcustomer().subscribe((res: any) => {
       this.customerdata = res;
-      console.log(res);
-    }
-    );
-
-    this.customers.map((c: any) => {
+     // console.log(res);
+      
+    this.customerdata.map((c: any) => {
       c['totalCost'] = 0;
       if (c?.orders) {
         c.orders = c.orders.map((o: any) => {
@@ -38,22 +36,15 @@ export class ListviewComponent implements OnInit {
         });
       }
     })
-    console.log(this.customers);
+    }
+    );
+
+    //console.log(this.customers);
 
   }
 
 
-  // cust(data1: any){
-  //   this._router.navigate(['DetailsComponent'],
-  //   {
-  //     queryParams:{
-  //     ...data1
-  //   }
-  //   });
-
-  // }
-
-  onClick(data: any) {
+  DetailsComponent(data: any) {
     this._router.navigate(['DetailsComponent'],
       {
         queryParams: {
@@ -61,9 +52,15 @@ export class ListviewComponent implements OnInit {
         }
       }
     )
-    // this.activatedRoute.queryParams.subscribe((params: any) => {
-    //   console.log(params)
-    // })
+  
+  }
+
+  viewCustomer(id: string){
+    this._router.navigateByUrl("/DetailsComponent/"+id)
+  }
+
+  viewOrder(){
+    this._router.navigate(["/OrdersComponent"])
   }
 
 }

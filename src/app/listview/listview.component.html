@@ -19,17 +19,17 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let data of customers | search : search2 ">   
+        <tr *ngFor="let data of customerdata | search : search2 ">   
             <td><img *ngIf="data.gender==='male'" src="../assets/male.png" style="height: 50px;">
                 <img *ngIf="data.gender==='female'" src="../assets/female.png" style="height: 50px;">
             </td>
-            <td (click)="onClick(data)"><button class="btn btn-link">{{data.firstName}}</button></td>
+            <td (click)="DetailsComponent(data)"><button class="btn btn-link" >{{data.firstName}}</button></td>
             <td>{{data.lastName}}</td>
             <td>{{data.address}}</td>
             <td>{{data.city}}</td>
             <td>{{data.state.name}}</td>
-            <td>{{data.totalCost}}</td>
-            <td><button class="btn btn-link" style="text-decoration: none; color:rgb(75, 120, 235)">View orders</button></td>   
+            <td>{{data.totalCost|number}}</td>
+            <td><button class="btn btn-link" style="text-decoration: none; color:rgb(75, 120, 235)" (click)="viewOrder()">View orders</button></td>   
         </tr>
     </tbody>
 </table>

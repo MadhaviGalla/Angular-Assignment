@@ -1,18 +1,20 @@
-.container{
-    height: 350px;
-    width: 300px;
-    background-color: rgb(152, 190, 190);
+/* .container{
+    height: 300px;
+    width: 500px;
+    background-color: rgb(218, 231, 231);
+    margin-top: 80px;
    
-}
-form{
+} */
+/* form{
     height: 200px;
     width: 200px;
     margin: auto;
     margin-top: 100px;
    
    
-}
-.btnSubmit{
+} */
+
+button{
     width: 50%;
     border-radius: 2px;
     padding: 5px;
@@ -22,6 +24,38 @@ form{
     border: none;
     border-radius: 5px;
 }
-.form-group{
+/* .form-group{
     padding: 10px;
+} */
+
+.form-control{
+    width: 50%;
+}
+.header{
+    background-color:  #007af8;
+}
+.navbar-brand{
+    color: white;
+}
+
+
+h3{
+    padding-top: 10px;
+}
+.ul li{
+    color: white;
+}
+.btn{
+    color: gray;
+    font-weight: bold;
+}
+.text{
+    color: white;
+    margin-left: 50px ;
+    font-weight: bold;
+    margin: 0;
+
+}
+li a{
+    cursor: pointer;
 }

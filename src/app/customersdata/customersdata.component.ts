@@ -1,16 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-
-import  customersdata from 'D:/my-dream-app/src/assets/customers.json';
-
-interface customerdataInterface {
-  id: number,
-  firstName: String,
-  lastName: String,
-  gender: String,
-  address: number,
-  city: String,
-}
-
+import { Customers } from '../customers';
+import { ServiceService } from '../service/service.service';
 
 @Component({
   selector: 'app-customersdata',
@@ -18,13 +9,18 @@ interface customerdataInterface {
   styleUrls: ['./customersdata.component.css']
 })
 export class CustomersdataComponent implements OnInit {
-  public customers: any[] | undefined;
-  
-  
 
-  constructor() { }
+  public customers : any;
+
+  allCustomers: Customers[]= [];
+  serviceService: any;
+  Customers: any;
+ 
+  constructor(private http: HttpClient, private service:ServiceService) { }
 
   ngOnInit(): void {
+    
   }
+
 
 }
