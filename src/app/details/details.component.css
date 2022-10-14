@@ -1,51 +1,49 @@
-.header{
-    background-color:  #007af8;
-}
-.navbar-brand{
+.text {
     color: white;
-}
-
-.logo{
-    padding: 10px;
-    height: 50px;
-    width: 50px;
-}
-.pic{
-    display: flex;
-}
-h3{
-    padding-top: 10px;
-}
-.ul li{
-    color: white;
-}
-.btn{
-    color: gray;
-    font-weight: bold;
-}
-.text{
-    color: white;
-    margin-left: 50px ;
+    margin-left: 50px;
     font-weight: bold;
     margin: 0;
 
 }
-img{
-    height: 70px;
-    width: 70px;
+
+img {
+    height: 100px;
+    width: 100px;
     padding: 10px;
+    margin-left: 50px ;
 }
-.data{
-    padding: 10px;
+
+.data {
+    
     display: flex;
+   
 }
-.row{
+
+.row {
     padding-left: 50px;
 }
-.btn{
+/* button{
     border: none;
-    color: black;
+    margin: 20px;
+    font-size: 17px;
+    background: transparent;
+    font-weight: bold;
+} */
+button{
+    border: none;
+    margin-left: 20px;
+    font-size: 17px;
+   
 }
-.btn:hover{
-    color: grey;
+.logo{
+    padding: 10px;
+    height: 50px;
+    width: 50px;
+    margin: 0;
+}
+.pic{
+    display: flex;
+}
+h2{
+    padding-top: 10px;
 }

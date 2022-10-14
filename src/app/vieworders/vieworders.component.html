@@ -1,0 +1,35 @@
+<app-header></app-header>
+
+<div class="container-fluid">
+    <div class="pic">
+        <img class="logo" src="./assets/pro.jpg">
+        <h2>Customers Information</h2>
+    </div>
+    
+
+
+    <div>
+        <button [routerLink]="['/DetailsComponent' ,data.id]"><i class="fa fa-list subheader"></i> Customer
+            Details</button>
+        <button routerLink="['/OrdersComponent' ,data.id]"><i class="fa fa-tag subheader"></i> Customer Orders</button>
+        <button routerLink="../edit"><i class="fa fa-pencil-square-o subheader"></i> Edit Customer</button>
+    </div>
+
+    <div class="container" *ngIf="data">
+        <div>
+            <table class="table table-striped">
+                <label style="font-size: 18px; margin-top:10px">Orders for {{data.firstName}}
+                    {{data.lastName}}</label><br><br>
+                <tbody>
+                    <tr *ngFor="let x of data?.orders">
+                        <td>{{x.productName}}</td>
+                        <td>${{x.itemCost}}</td>
+                    </tr>
+                    <tr>
+                        <td>TotalCost</td>
+                        <td>${{data.totalCost|number}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>

@@ -1,9 +1,10 @@
-
 button{
-    margin: 10px;
     border: none;
-    background: transparent;
-    font-size: 16px;
+    margin-left: 20px;
+    font-size: 17px;
+}
+.delete{
+    margin-top: 10px;
     
 }
 .logo{
@@ -16,4 +17,7 @@ button{
 }
 h2{
     padding-top: 10px;
+}
+label{
+    margin-top: 10px;
 }

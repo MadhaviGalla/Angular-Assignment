@@ -1,5 +1,5 @@
 export interface Customers {
-    id : number;
+    id: number,
     firstName: string,
     lastName: string,
     gender: string,
@@ -9,11 +9,10 @@ export interface Customers {
                 abbreviation: string,
                 name: string
             },
-            orders: [
-                {productName: string, itemCost: number},
-                {productName: string, itemCost: number}
-            ],
-            latitude: 33.299,
-            longitude: -111.963,
-            totalCost:""
+            // orders: [
+            //     {productName: string, itemCost: number},
+            //     {productName: string, itemCost: number}
+            // ],
+
+           
 }

@@ -1,32 +1,26 @@
-/* .container{
+.container{
     height: 300px;
     width: 500px;
+    
     background-color: rgb(218, 231, 231);
     margin-top: 80px;
    
-} */
-/* form{
-    height: 200px;
-    width: 200px;
-    margin: auto;
-    margin-top: 100px;
-   
-   
-} */
-
+}
+.login{
+    text-align: center;
+}
 button{
-    width: 50%;
+    width: 92%;
+    margin-top: 30px;
     border-radius: 2px;
     padding: 5px;
     border: none;
-    cursor: pointer;
-    
+    cursor: pointer;   
     border: none;
     border-radius: 5px;
+  
+
 }
-/* .form-group{
-    padding: 10px;
-} */
 
 .form-control{
     width: 50%;
@@ -36,6 +30,9 @@ button{
 }
 .navbar-brand{
     color: white;
+    font-weight: bold;
+    font-size: 25px;
+    margin-left: 15px;
 }
 
 
@@ -59,3 +56,37 @@ h3{
 li a{
     cursor: pointer;
 }
+
+ body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #007af8;
+ }
+.content{
+    margin: 8%;
+    background-color: #fff;
+    padding: 4rem 1rem 4rem 1rem;
+    box-shadow: 0 0 5px 5px rgba(0,0,0, .05);
+}
+.signin-text{
+    font-style: normal;
+    font-weight: 600;
+
+}
+.form-control{
+    display: block;
+    width: 100%;
+    font-size: 1 rem;
+    font-weight: 400;
+    background-color: #fff;
+    background-clip: padding-box;
+}
+.form-control:focus{
+    color: #007af8;
+    box-shadow: none;
+}
+.btn{
+    color: white;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+

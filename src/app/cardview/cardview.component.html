@@ -1,26 +1,32 @@
 <app-test></app-test>
-<div  class = "forms-group" style="float:right; margin-top: -57px; margin-right: 116px; font-family: Verdana, Geneva, Tahoma, sans-serif; ">
-    <label>Filter :</label><br>
+<div style=" float:right; margin-top: -60px;margin-right: 20px;">
+    <label>Filter :</label>
     <input type="text" class="form-control search-field" placeholder="Search here" [(ngModel)]="search1">
 </div>
 
-<div class="box" style="display:flex;flex-wrap: wrap;">
-    <div *ngFor="let data of customers | search :search1 |  paginate : { itemsPerPage: 10, currentPage : p } " >
-    <div class="container" style="border:1px solid black; padding: 0;">
-            <div class="cv" style="background-color: #007af8; width: 100%;">
-                <label class="name">{{data.firstName +' '+ data.lastName}}</label>
+<div class="box">
+    <div *ngFor="let x of data| search :search1 |  paginate : { itemsPerPage: 10, currentPage : p } "
+        style="margin-right: 20px;">
+        <div class="container">
+            <div class="cv" style="background-color: #007af8; justify-content:space-between;height:30px;">
+                <label class="name" style="font-size:15px">{{x.firstName +' '+ x.lastName}}</label>
                 <i class="fa fa-pencil-square-o" aria-hidden="true"
-                style="color:rgb(252, 249, 249); float: right; height: 10px;padding: 10px;"></i>
-             </div>
-            <div style="display:flex"> 
+                    style="color:rgb(252, 249, 249); float: right; height: 10px;padding: 10px;"
+                    [routerLink]="['/EditComponent',x.id]"></i>
+            </div>
+            <div style="display:flex">
                 <div>
-                    <img *ngIf ="data.gender=== 'male'" src="../assets/male.png" style="width:60px;height:60px;margin: 25px;">
-                    <img *ngIf ="data.gender=== 'female'" src="../assets/female.png" style="width:60px;height:60px;margin: 25px;">
+                    <img *ngIf="x.gender=== 'male'" src="../assets/male.png"
+                        style="width:70px;height:70px;margin: 10px;">
+                    <img *ngIf="x.gender=== 'female'" src="../assets/female.png"
+                        style="width:70px;height:70px;margin: 10px;">
                 </div>
-                <div style="margin-top:20px;">
-                    <label>{{data.city}}</label><br>
-                    <label>{{data.state.name}}</label><br>
-                    <button style="color:#007af8; border:none; background: transparent; margin-left:-8px;" (click)="viewOrder()">ViewOrders</button>
+                <div style="margin-top:10px;margin-left: 20px;">
+                    <label style="font-size:13px">{{x.city}}</label><br>
+                    <label style="font-size:13px">{{x.state.name}}</label><br>
+                    <button
+                        style="color:#007af8; border:none; background: transparent; margin-left:-8px;font-size:15px;"
+                        [routerLink]="['/DetailsComponent',x.id]">ViewDetails</button>
                 </div>
             </div>
         </div>
@@ -28,6 +34,6 @@
     </div>
 </div>
 
-    
-    
 <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+

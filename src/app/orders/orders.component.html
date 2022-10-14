@@ -1,33 +1,31 @@
 <app-header></app-header>
-<div class="row">
-    <span class="col-auto p-2 bg-white btn"><i class="fa fa-list subheader"><b> Customer Details</b> </i></span>
-    <span class="col-auto p-2 bg-white btn"><i class="fa fa-tag subheader"><b> Customer Orders</b> </i></span>
-    <span class="col-auto p-2 bg-white btn"><i class="fa fa-pencil-square-o subheader"><b> Edit Customer</b> </i></span>
-  </div>
+<div>
+    <div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Customer Name</th>
+                    <th scope="col">Items Name</th>
+                    <th scope="col">Item Cost</th>
+                    <th scope="col">Total Cost</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let x of data">
+                    <td>{{x.id}}</td>
+                    <td>{{x.firstName}} {{x.lastName}}</td>
+                    <td>
+                        <p *ngFor="let order of x.orders">{{order.productName}}</p>
+                    </td>
 
+                    <td>
+                        <p *ngFor="let order of x.orders">${{order.itemCost}}</p>
+                    </td>
+                    <td>${{x.totalCost|number}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
-    <table class="table table-striped">
-        <thead >
-            <tr>             
-                <th scope="col"> FirstName</th>
-                <th scope="col"> LastName</th>
-                <th scope="col">Orders</th>
-                <th scope="col">City</th>
-                <th scope="col">state</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let x of customers">
-               <td>{{x.firstName}}</td>
-               <td>{{x.lastName}} </td>
-
-               <td>
-                <p *ngFor="let order of x.orders">{{order.productName}}</p>
-               </td>
-               <td>{{x.city}}</td>
-               <td>{{x.state.name}}</td>
-            </tr>
-        </tbody>
-    </table>
-
-    
+</div>

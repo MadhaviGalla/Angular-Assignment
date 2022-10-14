@@ -1,5 +1,4 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
-import customersData from 'src/assets/customers.json';
 import { ServiceService } from '../service/service.service';
 import { Router } from '@angular/router';
 
@@ -11,21 +10,29 @@ import { Router } from '@angular/router';
 })
 
 export class CardviewComponent implements OnInit {
-  // public customer: any[] = [];
+  
   search1 = '';
   
-  constructor(private service: ServiceService , private router: Router) {
+  constructor(private service: ServiceService , private router: Router) {}
     
-   }
-
-  customers = customersData;
+   
   p :any;
 
   ngOnInit(): void {
-
+    this.getData()
   }
   viewOrder(){
     this.router.navigate(["/OrdersComponent"])
+  }
+
+  data: any
+
+  getData() {
+    this.service.getcustomer().subscribe((data) => {
+      this.data = data
+      console.log(data)
+    
+    })
   }
 
 }

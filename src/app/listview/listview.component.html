@@ -1,36 +1,37 @@
 <app-test></app-test>
-<div  class = "forms-group" style="float:right; margin-top: -57px; margin-right: 116px; font-family: Verdana, Geneva, Tahoma, sans-serif; ">
-    <label>Filter :</label><br>
+<div style=" float:right; margin-top: -60px;margin-right: 20px;">
+    <label>Filter :</label>
     <input type="text" class="form-control search-field" placeholder="Search here" [(ngModel)]="search2">
 </div>
 
-<div>
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th> </th>
-            <th>FirstName</th>
-            <th>LastName</th>
-            <th>Address</th>
-            <th>City</th>
-            <th>State</th>
-            <th>Orders Total</th>
-            <th>   </th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let data of customerdata | search : search2 ">   
-            <td><img *ngIf="data.gender==='male'" src="../assets/male.png" style="height: 50px;">
-                <img *ngIf="data.gender==='female'" src="../assets/female.png" style="height: 50px;">
-            </td>
-            <td (click)="DetailsComponent(data)"><button class="btn btn-link" >{{data.firstName}}</button></td>
-            <td>{{data.lastName}}</td>
-            <td>{{data.address}}</td>
-            <td>{{data.city}}</td>
-            <td>{{data.state.name}}</td>
-            <td>{{data.totalCost|number}}</td>
-            <td><button class="btn btn-link" style="text-decoration: none; color:rgb(75, 120, 235)" (click)="viewOrder()">View orders</button></td>   
-        </tr>
-    </tbody>
-</table>
+<div style="margin-top: 10px;">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th> </th>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Orders Total</th>
+                <th> </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let x of data | search : search2 ">
+                <td><img *ngIf="x.gender==='male'" src="../assets/male.png" style="height: 50px;">
+                    <img *ngIf="x.gender==='female'" src="../assets/female.png" style="height: 50px;">
+                </td>
+                <td [routerLink]="['/DetailsComponent',x.id]"><button class="btn btn-link">{{x.firstName}}</button></td>
+                <td>{{x.lastName}}</td>
+                <td>{{x.address}}</td>
+                <td>{{x.city}}</td>
+                <td>{{x.state.name}}</td>
+                <td>{{x.totalCost|number}}</td>
+                <td [routerLink]="['/vieworders/',x.id]"><button class="btn btn-link"
+                        style="text-decoration: none; color:rgb(75, 120, 235)">View orders</button></td>
+            </tr>
+        </tbody>
+    </table>
 </div>

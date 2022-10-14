@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { ServiceService } from '../service/service.service';
-import Cust from 'src/assets/customers.json';
 import { Customers } from '../customers';
 
 @Component({
@@ -13,36 +12,43 @@ export class OrdersComponent implements OnInit {
 
   // title = 'Import JSON Data from Assets Folder';
   
-  public customers = Cust;
+ 
   allCustomers: Customers[]= [];
   serviceService: any;
   price = 'number'
+  customer: any;
 
 
-  constructor( private _router:Router, private service: ServiceService) { }
+  constructor(private route: ActivatedRoute, private router:Router, private service: ServiceService) { }
 
   ngOnInit() :void{
-    this.customers
-      // this._serviceServices.getcustomer().subscribe(data=>this.customers=data);
-   
-  }
-  DetailsComponent(customers:any)
-  {
-    this._router.navigate(["DetailsComponent"])
-    queryParams:
-    {
-      data: JSON.stringify(this.customers)
-    }
+    this.getOrder()
+  
   }
 
-  // printAllOrders(orders: any[]){
-  //   return orders.map(order => order.productName).join(", ")
-  // }
+  data:any;
 
-  get(){
-    this.serviceService.get().subscribe((data: any)=> {
-      this.allCustomers = data;
+  getOrder(){
+    this.service.getcustomer().subscribe((data: any)=> {
+      this.data = data;
+      console.log("dat", data)
+      this.data.map((c: any) => {
+        c['totalCost'] = 0;
+        if (c?.orders) {
+          c.orders.map((o: any) => {
+            c['totalCost'] += o.itemCost;
+          });
+        }
+      })  
+      
     })
   }
+
+  // getbyorder(order:any){
+  //   this.service.getCustomerorderBy(order).subscribe(data =>{
+  //     this.customer=data
+      
+  //   })
+  // }
 
 }

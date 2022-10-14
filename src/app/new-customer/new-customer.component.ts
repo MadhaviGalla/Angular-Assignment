@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Customers } from '../customers';
 import { ServiceService } from '../service/service.service';
+import { Customers } from '../customers';
+import { FormsModule } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+
 
 
 @Component({
@@ -10,25 +13,53 @@ import { ServiceService } from '../service/service.service';
 })
 export class NewCustomerComponent implements OnInit {
 
-  allCustomers: Customers[]= [];
+  productForm:Customers ={
+    id: 0,
+    firstName:'',
+    lastName: '',
+    gender: '',
+    address: '',
+    city: '',
+
+  state:{
+    abbreviation: '',
+    name:'',
+    
+  }
+  
+    
+  }  
+  
   serviceService: any;
 
-  constructor(private service: ServiceService) { }
+  constructor(private service: ServiceService,
+     private froms:FormsModule, private router:Router,  private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    // this.get();
+
+    
+  }
+  
+  data:any;
+
+  getbyId(id:number){
+    this.service.getbyId(id).subscribe((data:any)=>{
+      this.data=data
+    })
+
   }
 
-  // get(){
-  //   this.serviceService.get().subscribe((data: any)=> {
-  //     this.allCustomers = data;
-  //   })
+
+  create(){
+    this.service.create(this.productForm)
+    .subscribe({
+      next:(data: any) => {
+        this.router.navigate(["/CardviewComponent"])
+      },
+      error:(err: any) => {
+        console.log(err);
+      }
+    })
   }
 
-//   openDialog() {
-//     this.dialog.open(DialogComponent, {
-//         width: '30%'
-//     });
-//   }
-
-// }
+}

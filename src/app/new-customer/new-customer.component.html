@@ -1,39 +1,41 @@
-<app-header></app-header>
-<!-- <h1 *ngFor = "let d of allCustomers">{{d.firstName}}</h1> -->
-<div class="container">  
-  <form>
-    <div class="mb-3">
-      <label for="txtName" class="form-label">Id</label>
-      <input type="text" name="name"  class="form-control" id="txtName" />
-    </div>
-    <div class="mb-3">
+<app-test></app-test>
+<div class="container" >
+  <div class="row">
+ 
+    <div class="col-md-6">
       <label for="txtName" class="form-label">First Name</label>
-      <input type="text" name="name"  class="form-control" id="txtName" />
+      <input type="text" name="name" [(ngModel)]="productForm.firstName" class="form-control" id="txtName" />
     </div>
-    <div class="mb-3">
+    <div class="col-md-6">
       <label for="txtName" class="form-label">Last Name</label>
-      <input type="text" name="name"  class="form-control" id="txtName" />
+      <input type="text" name="name" [(ngModel)]="productForm.lastName" class="form-control" id="txtName" />
     </div>
-    <div class="mb-3">
+    <div class="col-md-6">
       <label for="txtName" class="form-label">Gender</label>
-      <input type="text" name="name"  class="form-control" id="txtName" />
+      <input type="text" name="name" [(ngModel)]="productForm.gender" class="form-control" id="txtName" />
     </div>
-    <div class="mb-3">
+    <div class="col-md-6">
       <label for="txtName" class="form-label">State</label>
-      <input type="text" name="name"  class="form-control" id="txtName" />
+      <input type="text" name="name" [(ngModel)]="productForm.state.name" class="form-control" id="txtName" />
     </div>
-    <div class="mb-3">
+
+    <!-- <div class="col-md-6">
+      <label for="txtName" class="form-label">abbreviation</label>
+      <input type="text" name="name" [(ngModel)]="productForm.state.abbreviation" class="form-control" id="txtName" />
+    </div> -->
+
+    <div class="col-md-6">
       <label for="txtName" class="form-label">City</label>
-      <input type="text" name="name"  class="form-control" id="txtName" />
+      <input type="text" name="name" [(ngModel)]="productForm.city" class="form-control" id="txtName" />
     </div>
-    <div class="mb-3">
+    <div class="col-md-6">
       <label for="txtName" class="form-label">Address</label>
-      <input type="text" name="name"  class="form-control" id="txtName" />
+      <input type="text" name="name" [(ngModel)]="productForm.address" class="form-control" id="txtName" />
     </div>
-    <div class="mb-3">
-      <label for="txtPrice" class="form-label">Orders</label>
-      <input type="number" name="price" class="form-control" id="txtPrice" />
+    <div style="margin-top: 20px;">
+      <button type="button" class="btn btn-primary" (click)="create()" style="width: 500px; margin-left: 300px;">Submit</button>
     </div>
-    <button type="button" class="btn btn-primary">Submit</button>
-  </form>
+    
+  
+</div>
 </div>

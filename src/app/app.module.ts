@@ -28,7 +28,11 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { DialogComponent } from './dialog/dialog.component';
 import { GoogleMapsModule } from '@angular/google-maps';
+import { ViewordersComponent } from './vieworders/vieworders.component';
+import { EditComponent } from './edit/edit.component';
+import { AboutComponent } from './about/about.component';
 // import {AgmCoreModule} from '@agm/core';
+
 
 
 
@@ -50,6 +54,9 @@ declare module 'googlemaps';
     HeaderComponent,
     NewCustomerComponent,
     DialogComponent,
+    ViewordersComponent,
+    EditComponent,
+    AboutComponent,
    
    
 

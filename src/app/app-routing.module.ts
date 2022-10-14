@@ -9,6 +9,9 @@ import { DetailsComponent } from './details/details.component';
 import { OrdersComponent } from './orders/orders.component';
 import { NewCustomerComponent } from './new-customer/new-customer.component';
 import { CustomersdataComponent } from './customersdata/customersdata.component';
+import { ViewordersComponent } from './vieworders/vieworders.component';
+import { EditComponent } from './edit/edit.component';
+import { AboutComponent } from './about/about.component';
 
 
 
@@ -19,21 +22,27 @@ const routes: Routes = [
   {path:"test-view",component:TestComponent},
   {path:"MapviewComponent", component:MapviewComponent},
   {path:"LoginComponent", component:LoginComponent},
-  {path:"DetailsComponent",
-  component:DetailsComponent, 
+  {path:"DetailsComponent/:id",
   children: [
-    {path: "overview", component: ListviewComponent},
-    {path: "contact", component: CardviewComponent}
+    {path: "details", component: DetailsComponent},
+    {path: "", redirectTo: "details", pathMatch: "full"},
+    {path: "vieworders", component: ViewordersComponent},
+    {path: "edit", component:EditComponent},
   ]
 },
-  // {path:"DetailsComponent/:id",component:DetailsComponent},
+
+ 
   {path: "OrdersComponent", component:OrdersComponent},
   {path: "NewCustomer", component:NewCustomerComponent},
   {path: "customerdata", component:CustomersdataComponent},
-  // {path: "NewCustomer", component:NewCustomerComponent}
-
+  {path: "vieworders/:id", component:ViewordersComponent},
+  {path: "EditComponent/:id", component:EditComponent},
+  {path: "AboutComponent", component:AboutComponent}
   
 ];
+
+
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

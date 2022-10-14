@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   errorpassword : string | undefined;
 
   loginUser(){
-    if(this.email== "admin@gmail.com" && this.password== "Admin"){
+    if(this.email== "admin@gmail.com" && this.password== "123"){
       
       this.router.navigate(['CardviewComponent'])
     }
@@ -24,9 +24,9 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  refresh(){
-    window.location.reload()
-  }
+  // refresh(){
+  //   window.location.reload()
+  // }
 
   constructor(private router:Router) { }
 

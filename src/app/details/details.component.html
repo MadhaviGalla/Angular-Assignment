@@ -1,22 +1,30 @@
 <app-header></app-header>
- <div class="row">
-     <span class="col-auto p-2 bg-white btn"><i class="fa fa-list subheader"><b> Customer Details</b> </i></span>
-    <div class="col-auto p-2 bg-white btn" ><i class="fa fa-tag subheader">Customer Orders</i>
-      </div>
-       <span class="col-auto p-2 bg-white btn" ><i class="fa fa-pencil-square-o subheader"><b> Edit Customer</b> </i></span>
-   </div>
- 
-<div class="data">
-      <div>
-           <img *ngIf="customer.gender === 'male'" src="../../assets/male.png">
-           <img *ngIf="customer.gender === 'female'" src="../../assets/female.png">
-      </div>
-        <div>
-              {{customer.firstName}}
-              {{customer.lastName}}<br>
-              {{customer.address}}<br>
-              {{customer.city}}
-              {{customer.state.name}}
-        </div>
+<div class="container-fluid" >
+      <div class="pic">
+         <img class="logo" src="./assets/pro.jpg">
+         <h2>Customers Information</h2>
+    </div>
+
+<div>
+      <button  routerLink="../details"><i class="fa fa-list subheader"></i> Customer Details</button>
+      <button routerLink="../vieworders"><i class="fa fa-tag subheader"></i> Customer Orders</button>
+      <button routerLink="../edit"><i class="fa fa-pencil-square-o subheader"></i> Edit Customer</button>
 </div>
 
+
+
+<div class="data" *ngIf="customer">
+      <div>
+            <img *ngIf="customer.gender === 'male'" src="../../assets/male.png">
+            <img *ngIf="customer.gender === 'female'" src="../../assets/female.png">
+      </div>
+      <div style="margin-top: 20px; font-size: 15px;">
+            {{customer.firstName}}
+            {{customer.lastName}}<br>
+            {{customer.address}}<br>
+            {{customer.city}}
+            {{customer.state.name}}
+      </div>
+</div>
+
+<router-outlet></router-outlet>
