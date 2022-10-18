@@ -10,8 +10,11 @@ import { Customers } from '../customers';
 })
 export class EditComponent implements OnInit {
 
+  data:any
+
+
   productForm:Customers = {
-    id: 0,
+    // id: 0,
     firstName:'',
     lastName: '', 
     gender: '',
@@ -25,6 +28,10 @@ export class EditComponent implements OnInit {
   }
   }
 
+
+  customer: any;
+public active=3
+
   constructor(private service:ServiceService, private route:ActivatedRoute, private router:Router) { }
 
   ngOnInit(): void {
@@ -36,9 +43,13 @@ export class EditComponent implements OnInit {
     
     
   }
+  
+  
+
 
   getById(id: number) {
     this.service.getById(id).subscribe((data) => {
+      this.customer=data
       this.productForm = data;
       console.log(this.productForm);
     });  

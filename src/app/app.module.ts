@@ -31,6 +31,7 @@ import { GoogleMapsModule } from '@angular/google-maps';
 import { ViewordersComponent } from './vieworders/vieworders.component';
 import { EditComponent } from './edit/edit.component';
 import { AboutComponent } from './about/about.component';
+import { NavComponent } from './nav/nav.component';
 // import {AgmCoreModule} from '@agm/core';
 
 
@@ -57,6 +58,7 @@ declare module 'googlemaps';
     ViewordersComponent,
     EditComponent,
     AboutComponent,
+    NavComponent,
    
    
 

@@ -12,6 +12,7 @@ import { CustomersdataComponent } from './customersdata/customersdata.component'
 import { ViewordersComponent } from './vieworders/vieworders.component';
 import { EditComponent } from './edit/edit.component';
 import { AboutComponent } from './about/about.component';
+import { NavComponent } from './nav/nav.component';
 
 
 
@@ -22,13 +23,8 @@ const routes: Routes = [
   {path:"test-view",component:TestComponent},
   {path:"MapviewComponent", component:MapviewComponent},
   {path:"LoginComponent", component:LoginComponent},
-  {path:"DetailsComponent/:id",
-  children: [
-    {path: "details", component: DetailsComponent},
-    {path: "", redirectTo: "details", pathMatch: "full"},
-    {path: "vieworders", component: ViewordersComponent},
-    {path: "edit", component:EditComponent},
-  ]
+  {path:"DetailsComponent/:id",component:DetailsComponent
+ 
 },
 
  
@@ -37,7 +33,8 @@ const routes: Routes = [
   {path: "customerdata", component:CustomersdataComponent},
   {path: "vieworders/:id", component:ViewordersComponent},
   {path: "EditComponent/:id", component:EditComponent},
-  {path: "AboutComponent", component:AboutComponent}
+  {path: "AboutComponent", component:AboutComponent},
+  {path: "nav", component:NavComponent}
   
 ];
 
@@ -49,3 +46,9 @@ const routes: Routes = [
   exports: [RouterModule],
 })
 export class AppRoutingModule { }
+ // children: [
+  //   {path: "details", component: DetailsComponent},
+  //   {path: "", redirectTo: "details", pathMatch: "full"},
+  //   {path: "vieworders", component: ViewordersComponent},
+  //   {path: "edit", component:EditComponent},
+  // ]

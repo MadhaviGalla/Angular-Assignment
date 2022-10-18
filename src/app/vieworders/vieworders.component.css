@@ -1,14 +1,9 @@
-/* button{
-    border: none;
-    margin: 20px;
-    font-size: 17px;
-    background: transparent;
-    font-weight: bold;
-} */
 button{
     border: none;
     margin-left: 20px;
     font-size: 17px;
+    background: transparent;
+    color: gray;
    
 }
 .logo{
@@ -21,4 +16,22 @@ button{
 }
 h2{
     padding-top: 10px;
+}
+.active{
+    color: black;
+    /* font-weight: bold; */
+   
+ }
+
+ .data {
+    
+    display: flex;
+   
+}
+
+img {
+    height: 100px;
+    width: 100px;
+    padding: 10px;
+    margin-left: 50px ;
 }

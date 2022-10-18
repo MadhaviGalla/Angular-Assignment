@@ -22,17 +22,13 @@ img {
 .row {
     padding-left: 50px;
 }
-/* button{
-    border: none;
-    margin: 20px;
-    font-size: 17px;
-    background: transparent;
-    font-weight: bold;
-} */
+
 button{
     border: none;
     margin-left: 20px;
     font-size: 17px;
+    color: grey;
+    background: transparent;
    
 }
 .logo{
@@ -47,3 +43,8 @@ button{
 h2{
     padding-top: 10px;
 }
+.active{
+    color: black;
+    font-weight: bold;
+   
+ }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import customersData from 'src/assets/customers.json';
+import { Customers } from '../customers';
 import { ServiceService } from '../service/service.service';
 
 @Component({
@@ -12,12 +13,23 @@ export class DetailsComponent implements OnInit {
 
 
   constructor(private route: ActivatedRoute, private _router: Router, private service: ServiceService) { }
+  productForm:Customers= {
 
+    firstName:'',
+    lastName: '', 
+    gender: '',
+    address: '',
+    city: '',
+  state:{
+    abbreviation: '',
+    name:'',
+  }
+  }
   data = [];
 
   customers = customersData;
   customer: any;
-
+public active=1
   ngOnInit(): void {
     this.route.paramMap.subscribe(d => {
       console.log(d);
@@ -27,14 +39,23 @@ export class DetailsComponent implements OnInit {
 
   }
   getbyid(id: any) {
-    this.service.getCustomerBy(id).subscribe(data => {
+    this.service.getCustomerBy(id).subscribe((data:any) => {
       this.customer = data
+      this.productForm=data
+      console.log(data)
+      this.customer['totalCost']=0;
+      if(this.customer?.orders){
+        this.customer.orders?.map((orders:any)=>{
+          this.customer['totalCost'] +=orders.itemCost;
+        });
+      }
+     
     })
   }
 
 
   details() {
-    console.log("Hello")
+    // console.log("Hello")
     this._router.navigate(['details'], { relativeTo: this.route })
   }
 
@@ -42,5 +63,32 @@ export class DetailsComponent implements OnInit {
     this._router.navigate(['DetailsComponent/:id/orders'], { relativeTo: this.route })
     console.log(this.data)
   }
+  update() {
+    this.service.update(this.productForm)
+    .subscribe({
+      next:(data) => {
+        this._router.navigate(['/CardviewComponent']);
+        alert("Updated Successfully")
+      },
+      error:(err) => {
+        console.log(err);
+      }
+    })
+    
+  }
+
+
+  delete() {
+    this.service.delete(this.productForm)
+    .subscribe({
+      next:(data) => {
+        this._router.navigate(['/CardviewComponent']);
+        alert("deleted successfully");
+      },
+      
+    })
+    
+  }
+
 
 }

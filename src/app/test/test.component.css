@@ -4,6 +4,7 @@ button{
     border: none;
     background: transparent;
     font-size: 16px;
+    color: grey;
     
 }
 .logo{
@@ -16,4 +17,9 @@ button{
 }
 h2{
     padding-top: 10px;
+}
+.active{
+   color: black;
+   font-weight: bold;
+  
 }

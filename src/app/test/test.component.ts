@@ -22,28 +22,28 @@ export class TestComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  Cardview() {
-    this._router.navigate(['CardviewComponent']);
-  }
+  // Cardview() {
+  //   this._router.navigate(['CardviewComponent']);
+  // }
 
-  Listview(){
-    this._router.navigate(['ListviewComponent']);
-  }
-  MapView(){
-    this._router.navigate(['MapviewComponent'])
-  }
-  Login(){
-    this._router.navigate(['LoginComponent'])
-  }
-  Details(){
-    this._router.navigate(['Details'])
-  }
-  Oders(){
-    this._router.navigate(['OrdersComponent'])
-  }
-  new(){
-    this._router.navigate(['NewCustomer'])
-  }
+  // Listview(){
+  //   this._router.navigate(['ListviewComponent']);
+  // }
+  // MapView(){
+  //   this._router.navigate(['MapviewComponent'])
+  // }
+  // Login(){
+  //   this._router.navigate(['LoginComponent'])
+  // }
+  // Details(){
+  //   this._router.navigate(['Details'])
+  // }
+  // Oders(){
+  //   this._router.navigate(['OrdersComponent'])
+  // }
+  // new(){
+  //   this._router.navigate(['NewCustomer'])
+  // }
 
 
 

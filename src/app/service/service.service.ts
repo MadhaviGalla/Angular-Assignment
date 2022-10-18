@@ -22,16 +22,19 @@ export class ServiceService  {
     return  this.http.get("http://localhost:3000/customers");
     
   }
-  create(paylode:Customers){
-    return this.http.post("http://localhost:3000/customers", paylode);
+
+  // create method for new customer
+  create(payload:Customers){
+    return this.http.post("http://localhost:3000/customers", payload);
   }
 
+   // create method for new customer
   getbyId(id:number){
     return this.http.get(`http://localhost:3000/customers/${id}`)
   }
 
-  edit(paylode:Customers){
-    return this.http.put(`http://localhost:3000/customers/${paylode.id}`, paylode);
+  edit(payload:Customers){
+    return this.http.put(`http://localhost:3000/customers/${payload.id}`, payload);
   }
 
   getCustomerById(id:string){

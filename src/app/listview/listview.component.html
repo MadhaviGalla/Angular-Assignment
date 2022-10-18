@@ -28,7 +28,7 @@
                 <td>{{x.address}}</td>
                 <td>{{x.city}}</td>
                 <td>{{x.state.name}}</td>
-                <td>{{x.totalCost|number}}</td>
+                <td>${{x.totalCost|number}}</td>
                 <td [routerLink]="['/vieworders/',x.id]"><button class="btn btn-link"
                         style="text-decoration: none; color:rgb(75, 120, 235)">View orders</button></td>
             </tr>
