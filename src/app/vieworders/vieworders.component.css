@@ -1,37 +1,27 @@
-button{
-    border: none;
-    margin-left: 20px;
-    font-size: 17px;
-    background: transparent;
-    color: gray;
-   
-}
-.logo{
+.logo {
     padding: 10px;
     height: 50px;
     width: 50px;
 }
-.pic{
+
+.pic {
     display: flex;
 }
-h2{
+
+h2 {
     padding-top: 10px;
 }
-.active{
-    color: black;
-    /* font-weight: bold; */
-   
- }
 
- .data {
-    
+.data {
+
     display: flex;
-   
+
 }
 
 img {
     height: 100px;
     width: 100px;
     padding: 10px;
-    margin-left: 50px ;
+    margin-left: 50px;
+    margin: 0;
 }

@@ -6,7 +6,7 @@
       "lastName": "James",
       "gender": "male",
       "address": "1234 Anywhere St.",
-      "city": " Phoenix ",
+      "city": " Phoenix",
       "state": {
         "abbreviation": "AZ",
         "name": "Arizona"
@@ -22,7 +22,8 @@
         }
       ],
       "latitude": 33.299,
-      "longitude": -111.963
+      "longitude": -111.963,
+      "totalCost": 207.98000000000002
     },
     {
       "id": 2,

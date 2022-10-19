@@ -5,135 +5,108 @@
         <img class="logo" src="./assets/pro.jpg">
         <h2>Customers Information</h2>
     </div>
-    <!-- <app-nav></app-nav> -->
-    <!-- <div>
-        <button [routerLink]="['/DetailsComponent' ,data.id]" routerLinkActive='active'><i class="fa fa-list subheader"></i> Customer
-            Details</button>
-        <button routerLink="['/OrdersComponent' ,data.id]" routerLinkActive='active'><i class="fa fa-tag subheader"></i> Customer Orders</button>
-        <button routerLink="../edit" routerLinkActive='active'><i class="fa fa-pencil-square-o subheader"></i> Edit Customer</button>
-    </div>
+   
+    <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-pills" style="font-size: 18px;">
+      <li [ngbNavItem]="1">
+            <a ngbNavLink>
+                  <i class="fa fa-list subheader"></i> Customer Details</a>
+            <ng-template ngbNavContent>
+                  <div class="data">
+                        <div *ngIf="customer?.gender ==='male'"><img src="../../assets/male.png"></div>
+                        <div>
+                              <img *ngIf="customer?.gender === 'female'" src="../../assets/female.png">
+                        </div>
+                        <div style="margin-top: 20px; font-size: 15px;">
+                              {{customer?.firstName}}
+                              {{customer?.lastName}}<br>
+                              {{customer?.address}}<br>
+                              {{customer?.city}}
+                              {{customer?.state?.name}}
+                        </div>
+                  </div>
 
-    <div class="container" *ngIf="data">
-        <div>
-            <table class="table table-striped">
-                <label style="font-size: 18px; margin-top:10px">Orders for {{customer?.firstName}}
-                    {{customer?.lastName}}</label><br><br>
-                <tbody>
-                    <tr *ngFor="let x of customer?.orders">
-                        <td>{{x.productName}}</td>
-                        <td>${{x.itemCost}}</td>
-                    </tr>
-                    <tr>
-                        <td>TotalCost</td>
-                        <td>${{customer?.totalCost|number}}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
- -->
+            </ng-template>
+      </li>
+      <li [ngbNavItem]="2">
+            <a ngbNavLink>
+                  <i class="fa fa-tag subheader"></i> Customer Orders</a>
+            <ng-template ngbNavContent>
+                  <div class="container">
+                        <div>
+                              <table class="table table-striped">
+                                    <label style="font-size: 18px; margin-top:10px">Orders for
+                                          {{customer?.firstName}}
+                                          {{customer?.lastName}}</label><br><br>
+                                    <tbody>
+                                          <tr *ngFor="let x of customer.orders">
+                                                <td>{{x?.productName}}</td>
+                                                <td>${{x?.itemCost}}</td>
+                                          </tr>
+                                          <tr>
+                                                <td>TotalCost</td>
+                                                <td>${{customer?.totalCost|number}}</td>
+                                          </tr>
+                                    </tbody>
+                              </table>
+                        </div>
+                  </div>
+            </ng-template>
+      </li>
+      <li [ngbNavItem]="3">
+            <a ngbNavLink>
+                  <i class="fa fa-pencil-square-o subheader"> </i> Edit Customer</a>
+            <ng-template ngbNavContent>
+                  <div class="container" style="margin-top: 30px;">
+                        <div class="row">
+                              <form #form="ngForm" class="row g-3">
+                                    <div class="col-sm-4">
+                                          <label for="txtName" class="form-label">FirstName</label>
+                                          <input type="text" name="firstName" [(ngModel)]="productForm.firstName"
+                                                class="form-control" id="txtName" />
+                                    </div>
+                                    <div class="col-sm-4">
+                                          <label for="txtName" class="form-label">LastName</label>
+                                          <input type="text" name="lastName" [(ngModel)]="productForm.lastName"
+                                                class="form-control" id="txtName" />
+                                    </div>
+                                    <div class="col-sm-4">
+                                          <label for="txtName" class="form-label">Gender</label>
+                                          <input type="text" name="Gender" [(ngModel)]="productForm.gender"
+                                                class="form-control" id="txtName" />
+                                    </div>
+                                    <div class="col-sm-4">
+                                          <label for="txtName" class="form-label">Address</label>
+                                          <input type="text" name="Name" [(ngModel)]="productForm.address"
+                                                class="form-control" id="txtName" />
+                                    </div>
 
+                                    <div class="col-sm-4">
+                                          <label for="txtName" class="form-label">State</label>
+                                          <input type="text" name="state" [(ngModel)]="productForm.state.name"
+                                                class="form-control" id="txtName" />
+                                    </div>
+                                    <div class="col-sm-4">
+                                          <label for="txtName" class="form-label">Abbreviation</label>
+                                          <input type="text" name="abbreviation"
+                                                [(ngModel)]="productForm.state.name" class="form-control"
+                                                id="txtName" />
+                                    </div>
+                                    <div class="col-sm-4">
+                                          <label for="txtName" class="form-label">City</label>
+                                          <input type="text" name="city" [(ngModel)]="productForm.city"
+                                                class="form-control" id="txtName" />
+                                    </div>
+                                    <div style="display:flex;">
+                                          <button type="button" (click)="update()" class="btn btn-primary"
+                                                style="margin-top:20px;  width: 25%;">Update</button>
+                                          <button type="button" (click)="delete()" class="btn btn-danger"
+                                                style="margin-top: 20px; width: 25%; margin-left: 10px;">Delete</button>
+                                    </div>
+                              </form>
+                        </div>
+                  </div>
+            </ng-template>
+      </li>
+</ul>
 
-
-    
-    <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
-        <li [ngbNavItem]="1">
-              <a ngbNavLink>details</a>
-              <ng-template ngbNavContent>
-                    <div class="data">
-                          <div *ngIf="customer?.gender ==='male'"><img src="../../assets/male.png"></div>
-                          <div>
-                                <img *ngIf="customer?.gender === 'female'" src="../../assets/female.png">
-                          </div>
-                          <div style="margin-top: 20px; font-size: 15px;">
-                                {{customer?.firstName}}
-                                {{customer?.lastName}}<br>
-                                {{customer?.address}}<br>
-                                {{customer?.city}}
-                                {{customer?.state?.name}}
-                          </div>
-                    </div>
-
-              </ng-template>
-        </li>
-        <li [ngbNavItem]="2">
-              <a ngbNavLink>orders</a>
-              <ng-template ngbNavContent>
-                    <div class="container">
-                          <div>
-                                <table class="table table-striped">
-                                      <label style="font-size: 18px; margin-top:10px">Orders for
-                                            {{customer?.firstName}}
-                                            {{customer?.lastName}}</label><br><br>
-                                      <tbody>
-                                            <tr *ngFor="let x of customer.orders">
-                                                  <td>{{x?.productName}}</td>
-                                                  <td>${{x?.itemCost}}</td>
-                                            </tr>
-                                            <tr>
-                                                  <td>TotalCost</td>
-                                                  <td>${{customer?.totalCost|number}}</td>
-                                            </tr>
-                                      </tbody>
-                                </table>
-                          </div>
-                    </div>
-              </ng-template>
-        </li>
-        <li [ngbNavItem]="3">
-              <a ngbNavLink>editcustomer</a>
-              <ng-template ngbNavContent>
-                    <div class="container" style="margin-top: 30px;">
-                          <div class="row">
-                                <form #form="ngForm">
-                                      <div class="col-md-6">
-                                            <label for="txtName" class="form-label">FirstName</label>
-                                            <input type="text" name="firstName" [(ngModel)]="productForm.firstName"
-                                                  class="form-control" id="txtName" />
-                                      </div>
-                                      <div class="col-md-6">
-                                            <label for="txtName" class="form-label">LastName</label>
-                                            <input type="text" name="lastName" [(ngModel)]="productForm.lastName"
-                                                  class="form-control" id="txtName" />
-                                      </div>
-                                      <div class="col-md-6">
-                                            <label for="txtName" class="form-label">Gender</label>
-                                            <input type="text" name="Gender" [(ngModel)]="productForm.gender"
-                                                  class="form-control" id="txtName" />
-                                      </div>
-                                      <div class="col-md-6">
-                                            <label for="txtName" class="form-label">Address</label>
-                                            <input type="text" name="Name" [(ngModel)]="productForm.address"
-                                                  class="form-control" id="txtName" />
-                                      </div>
-
-                                      <div class="col-md-6">
-                                            <label for="txtName" class="form-label">State</label>
-                                            <input type="text" name="state" [(ngModel)]="productForm.state.name"
-                                                  class="form-control" id="txtName" />
-                                      </div>
-                                      <div class="col-md-6">
-                                            <label for="txtName" class="form-label">Abbreviation</label>
-                                            <input type="text" name="abbreviation"
-                                                  [(ngModel)]="productForm.state.name" class="form-control"
-                                                  id="txtName" />
-                                      </div>
-                                      <div class="col-md-6">
-                                            <label for="txtName" class="form-label">City</label>
-                                            <input type="text" name="city" [(ngModel)]="productForm.city"
-                                                  class="form-control" id="txtName" />
-                                      </div>
-                                      <div style="display:flex;">
-                                            <button type="button" (click)="update()" class="btn btn-primary"
-                                                  style="margin-top:20px;  width: 50%;">Update</button>
-                                            <button type="button" (click)="delete()" class="btn btn-danger"
-                                                  style="margin-top: 20px; width: 50%; ">Delete</button>
-                                      </div>
-                                </form>
-                          </div>
-                    </div>
-              </ng-template>
-        </li>
-  </ul>
-
-  <div [ngbNavOutlet]="nav" class="mt-2"></div>
+<div [ngbNavOutlet]="nav" class="mt-2"></div>

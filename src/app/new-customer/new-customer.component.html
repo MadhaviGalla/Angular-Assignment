@@ -1,7 +1,7 @@
 <app-test></app-test>
-<div class="container" >
+<div class="container">
   <div class="row">
- 
+
     <div class="col-md-6">
       <label for="txtName" class="form-label">First Name</label>
       <input type="text" name="name" [(ngModel)]="productForm.firstName" class="form-control" id="txtName" />
@@ -18,12 +18,6 @@
       <label for="txtName" class="form-label">State</label>
       <input type="text" name="name" [(ngModel)]="productForm.state.name" class="form-control" id="txtName" />
     </div>
-
-    <!-- <div class="col-md-6">
-      <label for="txtName" class="form-label">abbreviation</label>
-      <input type="text" name="name" [(ngModel)]="productForm.state.abbreviation" class="form-control" id="txtName" />
-    </div> -->
-
     <div class="col-md-6">
       <label for="txtName" class="form-label">City</label>
       <input type="text" name="name" [(ngModel)]="productForm.city" class="form-control" id="txtName" />
@@ -33,9 +27,10 @@
       <input type="text" name="name" [(ngModel)]="productForm.address" class="form-control" id="txtName" />
     </div>
     <div style="margin-top: 20px;">
-      <button type="button" class="btn btn-primary" (click)="create()" style="width: 500px; margin-left: 300px;">Submit</button>
+      <button type="button" class="btn btn-primary" (click)="create()"
+        style="width: 500px; margin-left: 300px;">Submit</button>
     </div>
-    
-  
-</div>
+
+
+  </div>
 </div>

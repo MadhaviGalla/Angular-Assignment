@@ -18,8 +18,6 @@ export class SearchPipe implements PipeTransform {
     });
   }
 }
-// function item(item: any) {
-//   throw new Error('Function not implemented.');
-// }
+
 
 

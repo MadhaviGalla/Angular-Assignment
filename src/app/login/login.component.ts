@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormGroup, FormControl } from '@angular/forms';
+import {LoginService} from '../login.service';
 
 @Component({
   selector: 'app-login',
@@ -8,29 +10,30 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  email:string | undefined;
-  password: string | undefined;
-  erroremail : string | undefined;
-  errorpassword : string | undefined;
 
-  loginUser(){
-    if(this.email== "admin@gmail.com" && this.password== "123"){
-      
-      this.router.navigate(['CardviewComponent'])
-    }
-    else{
-      this.erroremail = "Please enter valid Email";
-      this.errorpassword = "Please enter Valid Password";
-    }
-  }
-
-  // refresh(){
-  //   window.location.reload()
-  // }
-
-  constructor(private router:Router) { }
+  constructor(private router:Router, private srvc:LoginService) { }
 
   ngOnInit(): void {
+   
   }
+
+  loginfrm = new FormGroup({
+    uname: new FormControl(),
+    pwd :new FormControl()
+  })
+
+  CheckUser(){
+    var res = this.srvc.ValidateUser(this.loginfrm.value.uname, this.loginfrm.value.pwd);
+    if(res){
+      localStorage.setItem("uname", this.loginfrm.value["uname"]);
+      localStorage.setItem("pwd", this.loginfrm.value["pwd"]);
+      this.router.navigate(['/CardviewComponent'])
+    }
+    else
+    {
+      alert("Please Enter Your Details..")
+    }
+  }
+
 
 }

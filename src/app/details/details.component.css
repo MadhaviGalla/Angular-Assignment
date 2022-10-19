@@ -23,14 +23,6 @@ img {
     padding-left: 50px;
 }
 
-button{
-    border: none;
-    margin-left: 20px;
-    font-size: 17px;
-    color: grey;
-    background: transparent;
-   
-}
 .logo{
     padding: 10px;
     height: 50px;
@@ -43,8 +35,3 @@ button{
 h2{
     padding-top: 10px;
 }
-.active{
-    color: black;
-    font-weight: bold;
-   
- }

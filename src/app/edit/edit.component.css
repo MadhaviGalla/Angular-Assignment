@@ -1,4 +1,4 @@
-button{
+/* button{
     border: none;
     background: transparent;
     margin-left: 20px;
@@ -7,7 +7,7 @@ button{
 .delete{
     margin-top: 10px;
     
-}
+} */
 .logo{
     padding: 10px;
     height: 50px;
@@ -19,14 +19,15 @@ button{
 h2{
     padding-top: 10px;
 }
-label{
-    margin-top: 10px;
-}
+/* label{
+    margin-top: 3px;
+} */
 img {
     height: 100px;
     width: 100px;
     padding: 10px;
     margin-left: 50px ;
+    margin: 0;
 }
 
 .data {
@@ -34,3 +35,4 @@ img {
     display: flex;
    
 }
+

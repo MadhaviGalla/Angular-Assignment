@@ -13,23 +13,24 @@ export class DetailsComponent implements OnInit {
 
 
   constructor(private route: ActivatedRoute, private _router: Router, private service: ServiceService) { }
-  productForm:Customers= {
 
-    firstName:'',
-    lastName: '', 
+  productForm: Customers = {
+
+    firstName: '',
+    lastName: '',
     gender: '',
     address: '',
     city: '',
-  state:{
-    abbreviation: '',
-    name:'',
-  }
+    state: {
+      abbreviation: '',
+      name: '',
+    }
   }
   data = [];
 
   customers = customersData;
   customer: any;
-public active=1
+  public active = 1
   ngOnInit(): void {
     this.route.paramMap.subscribe(d => {
       console.log(d);
@@ -39,55 +40,54 @@ public active=1
 
   }
   getbyid(id: any) {
-    this.service.getCustomerBy(id).subscribe((data:any) => {
+    this.service.getCustomerBy(id).subscribe((data: any) => {
       this.customer = data
-      this.productForm=data
+      this.productForm = data
       console.log(data)
-      this.customer['totalCost']=0;
-      if(this.customer?.orders){
-        this.customer.orders?.map((orders:any)=>{
-          this.customer['totalCost'] +=orders.itemCost;
+      this.customer['totalCost'] = 0;
+      if (this.customer?.orders) {
+        this.customer.orders?.map((orders: any) => {
+          this.customer['totalCost'] += orders.itemCost;
         });
       }
-     
+
     })
   }
 
 
   details() {
-    // console.log("Hello")
     this._router.navigate(['details'], { relativeTo: this.route })
   }
 
-  vieworders() {
-    this._router.navigate(['DetailsComponent/:id/orders'], { relativeTo: this.route })
-    console.log(this.data)
-  }
+  // vieworders() {
+  //   this._router.navigate(['DetailsComponent/:id/orders'], { relativeTo: this.route })
+  //   console.log(this.data)
+  // }
   update() {
     this.service.update(this.productForm)
-    .subscribe({
-      next:(data) => {
-        this._router.navigate(['/CardviewComponent']);
-        alert("Updated Successfully")
-      },
-      error:(err) => {
-        console.log(err);
-      }
-    })
-    
+      .subscribe({
+        next: (data) => {
+          this._router.navigate(['/CardviewComponent']);
+          alert("Updated Successfully")
+        },
+        error: (err) => {
+          console.log(err);
+        }
+      })
+
   }
 
 
   delete() {
     this.service.delete(this.productForm)
-    .subscribe({
-      next:(data) => {
-        this._router.navigate(['/CardviewComponent']);
-        alert("deleted successfully");
-      },
-      
-    })
-    
+      .subscribe({
+        next: (data) => {
+          this._router.navigate(['/CardviewComponent']);
+          alert("deleted successfully");
+        },
+
+      })
+
   }
 
 

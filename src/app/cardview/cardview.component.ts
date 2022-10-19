@@ -30,8 +30,7 @@ export class CardviewComponent implements OnInit {
   getData() {
     this.service.getcustomer().subscribe(data => {
       this.data = data
-      // console.log(data)
-    
+      
     })
   }
 

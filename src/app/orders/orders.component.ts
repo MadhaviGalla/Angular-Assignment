@@ -10,26 +10,23 @@ import { Customers } from '../customers';
 })
 export class OrdersComponent implements OnInit {
 
-  // title = 'Import JSON Data from Assets Folder';
-  
- 
-  allCustomers: Customers[]= [];
+  allCustomers: Customers[] = [];
   serviceService: any;
   price = 'number'
   customer: any;
 
 
-  constructor(private route: ActivatedRoute, private router:Router, private service: ServiceService) { }
+  constructor(private route: ActivatedRoute, private router: Router, private service: ServiceService) { }
 
-  ngOnInit() :void{
+  ngOnInit(): void {
     this.getOrder()
-  
+
   }
 
-  data:any;
+  data: any;
 
-  getOrder(){
-    this.service.getcustomer().subscribe((data: any)=> {
+  getOrder() {
+    this.service.getcustomer().subscribe((data: any) => {
       this.data = data;
       console.log("dat", data)
       this.data.map((c: any) => {
@@ -39,16 +36,10 @@ export class OrdersComponent implements OnInit {
             c['totalCost'] += o.itemCost;
           });
         }
-      })  
-      
+      })
+
     })
   }
 
-  // getbyorder(order:any){
-  //   this.service.getCustomerorderBy(order).subscribe(data =>{
-  //     this.customer=data
-      
-  //   })
-  // }
 
 }

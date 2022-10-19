@@ -13,27 +13,24 @@ import { ViewordersComponent } from './vieworders/vieworders.component';
 import { EditComponent } from './edit/edit.component';
 import { AboutComponent } from './about/about.component';
 import { NavComponent } from './nav/nav.component';
+import {CactivateGuard} from './cactivate.guard';
 
 
 
 const routes: Routes = [
   {path:"", redirectTo: '/LoginComponent', pathMatch:'full'},
-  {path:"CardviewComponent",component:CardviewComponent},
-  {path:"ListviewComponent",component:ListviewComponent},
-  {path:"test-view",component:TestComponent},
-  {path:"MapviewComponent", component:MapviewComponent},
+  {path:"CardviewComponent",component:CardviewComponent, canActivate:[CactivateGuard]},
+  {path:"ListviewComponent",component:ListviewComponent, canActivate:[CactivateGuard]},
+  {path:"test-view",component:TestComponent, canActivate:[CactivateGuard]},
+  {path:"MapviewComponent", component:MapviewComponent, canActivate:[CactivateGuard]},
   {path:"LoginComponent", component:LoginComponent},
-  {path:"DetailsComponent/:id",component:DetailsComponent
- 
-},
-
- 
-  {path: "OrdersComponent", component:OrdersComponent},
-  {path: "NewCustomer", component:NewCustomerComponent},
-  {path: "customerdata", component:CustomersdataComponent},
-  {path: "vieworders/:id", component:ViewordersComponent},
-  {path: "EditComponent/:id", component:EditComponent},
-  {path: "AboutComponent", component:AboutComponent},
+  {path:"DetailsComponent/:id",component:DetailsComponent},
+  {path: "OrdersComponent", component:OrdersComponent, canActivate:[CactivateGuard]},
+  {path: "NewCustomer", component:NewCustomerComponent, canActivate:[CactivateGuard]},
+  {path: "customerdata", component:CustomersdataComponent, canActivate:[CactivateGuard]},
+  {path: "vieworders/:id", component:ViewordersComponent, canActivate:[CactivateGuard]},
+  {path: "EditComponent/:id", component:EditComponent, canActivate:[CactivateGuard]},
+  {path: "AboutComponent", component:AboutComponent, canActivate:[CactivateGuard]},
   {path: "nav", component:NavComponent}
   
 ];
