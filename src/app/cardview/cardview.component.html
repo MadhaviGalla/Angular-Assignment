@@ -16,9 +16,7 @@
             </div>
             <div style="display:flex">
                 <div>
-                    <img *ngIf="x.gender=== 'male'" src="../assets/male.png"
-                        style="width:70px;height:70px;margin: 10px;">
-                    <img *ngIf="x.gender=== 'female'" src="../assets/female.png"
+                    <img  src="assets/{{x.gender}}.png"
                         style="width:70px;height:70px;margin: 10px;">
                 </div>
                 <div style="margin-top:10px;margin-left: 20px;">

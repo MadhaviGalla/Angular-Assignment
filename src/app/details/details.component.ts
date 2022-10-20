@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import customersData from 'src/assets/customers.json';
 import { Customers } from '../customers';
 import { ServiceService } from '../service/service.service';
 
@@ -26,11 +25,13 @@ export class DetailsComponent implements OnInit {
       name: '',
     }
   }
+
   data = [];
 
-  customers = customersData;
   customer: any;
   public active = 1
+
+
   ngOnInit(): void {
     this.route.paramMap.subscribe(d => {
       console.log(d);
@@ -39,6 +40,7 @@ export class DetailsComponent implements OnInit {
     })
 
   }
+
   getbyid(id: any) {
     this.service.getCustomerBy(id).subscribe((data: any) => {
       this.customer = data
@@ -55,14 +57,7 @@ export class DetailsComponent implements OnInit {
   }
 
 
-  details() {
-    this._router.navigate(['details'], { relativeTo: this.route })
-  }
 
-  // vieworders() {
-  //   this._router.navigate(['DetailsComponent/:id/orders'], { relativeTo: this.route })
-  //   console.log(this.data)
-  // }
   update() {
     this.service.update(this.productForm)
       .subscribe({

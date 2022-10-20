@@ -9,8 +9,7 @@ import { Customers } from '../customers';
   styleUrls: ['./vieworders.component.css']
 })
 export class ViewordersComponent implements OnInit {
-  // data1: any;
-
+  
   productForm: Customers = {
     firstName: '',
     lastName: '',
@@ -37,7 +36,7 @@ export class ViewordersComponent implements OnInit {
     })
   }
 
-  //delete.....
+  
   getData(id: any) {
     this.service.getCustomerById(id).subscribe((data) => {
       console.log(data)

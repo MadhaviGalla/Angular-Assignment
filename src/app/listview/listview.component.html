@@ -20,8 +20,7 @@
         </thead>
         <tbody>
             <tr *ngFor="let x of data | search : search2 ">
-                <td><img *ngIf="x.gender==='male'" src="../assets/male.png" style="height: 50px;">
-                    <img *ngIf="x.gender==='female'" src="../assets/female.png" style="height: 50px;">
+                <td><img src="assets/{{x.gender}}.png" style="height: 50px;">             
                 </td>
                 <td [routerLink]="['/DetailsComponent',x.id]"><button class="btn btn-link">{{x.firstName}}</button></td>
                 <td>{{x.lastName}}</td>

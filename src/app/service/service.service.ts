@@ -7,11 +7,6 @@ import { Customers } from '../customers';
   providedIn: 'root'
 })
 export class ServiceService {
-  // [x: string]: any;
-  // get: any;
-  // Customers: any;
-
-  // url ="src/assets/customers.json"
 
   constructor(private http: HttpClient) {
     this.http.get("http://localhost:3000/customers").subscribe(data =>

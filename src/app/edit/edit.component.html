@@ -11,10 +11,8 @@
                         <i class="fa fa-list subheader"></i> Customer Details</a>
                   <ng-template ngbNavContent>
                         <div class="data">
-                              <div *ngIf="customer?.gender ==='male'"><img src="../../assets/male.png"></div>
-                              <div>
-                                    <img *ngIf="customer?.gender === 'female'" src="../../assets/female.png">
-                              </div>
+                              <div><img src="assets/{{customer?.gender}}.png"></div>
+                              
                               <div style="margin-top: 20px; font-size: 15px;">
                                     {{customer?.firstName}}
                                     {{customer?.lastName}}<br>

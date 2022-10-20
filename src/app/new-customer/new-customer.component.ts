@@ -42,14 +42,6 @@ export class NewCustomerComponent implements OnInit {
   
   data:any;
 
-  getbyId(id:number){
-    this.service.getbyId(id).subscribe((data:any)=>{
-      this.data=data
-    })
-
-  }
-
-
   create(){
     this.service.create(this.productForm)
     .subscribe({

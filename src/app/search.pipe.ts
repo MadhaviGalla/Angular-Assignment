@@ -6,15 +6,16 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class SearchPipe implements PipeTransform {
 
-  transform(value: any, args?: any): any {
-    if (!value) return null;
-    if (!args) return value;
-    args = args.toLowerCase();
+  transform(customers: any, filterText?: any): any {
+    // if (!value) return null;
+    // if (!args) return value;
+    if (!customers || !filterText) return customers;
+    filterText = filterText.toLowerCase();
     debugger;
-    return value.filter(function (item: any) {
+    return customers.filter(function (item: any) {
       return JSON.stringify(item)
         .toLowerCase()
-        .includes(args);
+        .includes(filterText);
     });
   }
 }

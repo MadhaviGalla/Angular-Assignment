@@ -21,8 +21,6 @@ export class ListviewComponent implements OnInit {
 
   ngOnInit() {
     this.getlist();
-
-
   }
   data: any
 

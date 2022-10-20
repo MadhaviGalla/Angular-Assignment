@@ -10,76 +10,73 @@ import { Customers } from '../customers';
 })
 export class EditComponent implements OnInit {
 
-  data:any
+  data: any
 
 
-  productForm:Customers = {
-    // id: 0,
-    firstName:'',
-    lastName: '', 
+  productForm: Customers = {
+    firstName: '',
+    lastName: '',
     gender: '',
     address: '',
     city: '',
 
-  state:{
-    abbreviation: '',
-    name:'',
-    
-  }
+    state: {
+      abbreviation: '',
+      name: '',
+
+    }
   }
 
 
   customer: any;
-public active=3
+  public active = 3
 
-  constructor(private service:ServiceService, private route:ActivatedRoute, private router:Router) { }
+  constructor(private service: ServiceService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((param) => {
       var id = Number(param.get('id'));
       this.getById(id);
-      
+
     });
-    
-    
+
+
   }
-  
-  
 
 
   getById(id: number) {
     this.service.getById(id).subscribe((data) => {
-      this.customer=data
+      this.customer = data
       this.productForm = data;
       console.log(this.productForm);
-    });  
+    });
   }
 
   update() {
     this.service.update(this.productForm)
-    .subscribe({
-      next:(data) => {
-        this.router.navigate(['/CardviewComponent']);
-        alert("Updated Successfully")
-      },
-      error:(err) => {
-        console.log(err);
-      }
-    })
-    
+      .subscribe({
+        next: (data) => {
+          this.router.navigate(['/CardviewComponent']);
+          alert("Updated Successfully")
+        },
+        error: (err) => {
+          console.log(err);
+        }
+      })
+
   }
 
 
   delete() {
     this.service.delete(this.productForm)
-    .subscribe({
-      next:(data) => {
-        this.router.navigate(['/CardviewComponent']);
-        alert("deleted successfully");
-      },
-      
-    })
-    
+      .subscribe({
+        next: (data) => {
+          this.router.navigate(['/CardviewComponent']);
+          alert("deleted successfully");
+        },
+
+      })
+
   }
 
 
