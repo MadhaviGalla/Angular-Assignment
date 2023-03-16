@@ -67,7 +67,7 @@ export class EditComponent implements OnInit {
   }
 
 
-  delete() {
+  delete(){
     this.service.delete(this.productForm)
       .subscribe({
         next: (data) => {

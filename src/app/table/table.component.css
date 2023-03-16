@@ -1,0 +1,7 @@
+.main{
+    width: 1000px;
+    height: 500px;
+    border: 1px solid black;
+    background-color: rgb(238, 240, 243);
+    margin: 10px;
+}

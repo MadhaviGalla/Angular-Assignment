@@ -9,7 +9,8 @@
     "test": "ng test",
     "gh-build": "ng build --output-path website --base-href /angular-my-first-project/",
     "gh-pages": "npm run gh-build && git subtree push --prefix website origin gh-pages",
-    "json-server": "json-server --watch db.json"
+    "json-server": "json-server --watch db.json",
+    "compodoc": "compodoc -p tsconfig.doc.json"
   },
   "private": true,
   "dependencies": {
@@ -33,6 +34,7 @@
     "@ng-bootstrap/ng-bootstrap": "^13.0.0",
     "@popperjs/core": "^2.10.2",
     "@types/googlemaps": "^3.43.3",
+    "angular-notifier": "^12.0.0",
     "bootstrap": "^5.2.0",
     "forms-angular": "^0.12.0-beta.192",
     "gh-pages": "^4.0.0",

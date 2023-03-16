@@ -10,12 +10,11 @@ export class ServiceService {
 
   constructor(private http: HttpClient) {
     this.http.get("http://localhost:3000/customers").subscribe(data =>
-      console.log(data))
+    console.log(data))
   }
 
   getcustomer() {
     return this.http.get("http://localhost:3000/customers");
-
   }
 
   // create method for new customer

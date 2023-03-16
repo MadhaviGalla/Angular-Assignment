@@ -46,7 +46,7 @@ export class NewCustomerComponent implements OnInit {
     this.service.create(this.productForm)
     .subscribe({
       next:(data: any) => {
-        // this.router.navigate(["/CardviewComponent"])
+      // this.router.navigate(["/CardviewComponent"])
       },
       error:(err: any) => {
         console.log(err);

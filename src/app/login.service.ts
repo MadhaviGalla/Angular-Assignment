@@ -8,9 +8,8 @@ export class LoginService {
   constructor() { }
 
   ValidateUser(username: any,password: any){
-    if(username=='admin'&&password=='123'){
+    if(username=='admin'&& password=='123'){
       return true;
-     
     }
     return false
 

@@ -17,9 +17,6 @@
 <div class="container-fluid">
 
 
-
-
-
   <div class="row content" style="width: 750px; height: 400px; margin: auto; margin-top: 50px;">
     <div class="col-md-6 mb-3">
       <img src="assets/login.webp" class="img-fluid">
@@ -30,15 +27,38 @@
       <form [formGroup]="loginfrm" (ngSubmit)="CheckUser()">
         <div class="form-group">
           <label for="username">Username</label>
-          <input type="text" class="form-control" name="uname" id="uname" formControlName="uname" autocomplete="off">
+          <input type="text" class="form-control" name="uname" formControlName="uname" autocomplete="off"
+          [class.is-invalid]="username?.invalid && (username?.dirty || username?.touched)">
+          <div *ngIf="username?.invalid && (username?.dirty || username?.touched)" class="invalid-feedback">
+            <div *ngIf="username?.errors?.['required']">
+              Username is required.
+            </div>
+          </div>
+          <!-- <span *ngIf="(loginfrm.controls.uname.touched)" class="error-msg">Username is required</span> -->
         </div><br>
+       
         <div class="form-group">
           <label for="password">Password</label>
-          <input type="password" class="form-control" name="pwd" id="pwd" formControlName="pwd">
+          <input [type]="isPasswordVisible ? 'text' : 'password'"
+           class="form-control" name="pwd" id="pwd" formControlName="pwd"
+           [class.is-invalid]="password?.invalid && (password?.dirty || password?.touched)">
+           <div *ngIf="password?.invalid && (password?.dirty || password?.touched)"  class="invalid-feedback">
+            <div *ngIf="password?.errors?.['required']">
+             Password is required
+             </div>
+           </div>
         </div>
+        <!-- <span *ngIf="(loginfrm.controls.pwd.touched)" class="error-msg">Password is required</span> -->
+        <span (click)="passwordVisibility()" class="pass-icon">
+           <i [ngClass]="{'fas': true, 'fa-eye' : !isPasswordVisible, 'fa-eye-slash':isPasswordVisible}"></i> 
+         </span>
         <div style="margin-left: -30px;">
           <button type="submit" class="btn btn-primary">Login</button>
         </div>
       </form>
     </div>
   </div>
+
+  <!-- <span class="validation-error" *ngIf="(formSubmitted || registrationFormGroup.controls.name.touched) && registrationFormGroup.controls.name.errors?.required">Name is required</span> -->
+
+  

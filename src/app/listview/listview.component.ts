@@ -27,7 +27,6 @@ export class ListviewComponent implements OnInit {
   getlist() {
     this.service.getcustomer().subscribe((data) => {
       this.data = data;
-
       console.log(data);
       this.data.map((c: any) => {
         c['totalCost'] = 0;
@@ -37,7 +36,6 @@ export class ListviewComponent implements OnInit {
           });
         }
       })
-
       console.log(data);
     })
   }
