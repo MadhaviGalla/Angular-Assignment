@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
 
 
   loginfrm = new FormGroup({
-    uname: new FormControl('',Validators.required),
+    uname: new FormControl('',Validators.minLength(5)),
     pwd :new FormControl('',Validators.required)
   })
 
@@ -53,6 +53,6 @@ export class LoginComponent implements OnInit {
     return this.loginfrm.get('pwd');
   }
   
-
+ 
 
 }

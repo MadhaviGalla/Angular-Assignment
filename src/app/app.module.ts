@@ -36,6 +36,8 @@ import { NotifierModule, NotifierOptions } from 'angular-notifier';
 import { DragndropComponent } from './dragndrop/dragndrop.component';
 import { ColumnsComponent } from './columns/columns.component';
 import { TableComponent } from './table/table.component';
+import { DynamicformComponent } from './dynamicform/dynamicform.component';
+import { Login2Component } from './login2/login2.component';
 
 declare module 'googlemaps';
 
@@ -102,6 +104,8 @@ const customNotifierOptions: NotifierOptions = {
     DragndropComponent,
     ColumnsComponent,
     TableComponent,
+    DynamicformComponent,
+    Login2Component,
 
 
 

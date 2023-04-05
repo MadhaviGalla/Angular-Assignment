@@ -34,19 +34,13 @@
               Username is required.
             </div>
           </div>
-          <!-- <span *ngIf="(loginfrm.controls.uname.touched)" class="error-msg">Username is required</span> -->
         </div><br>
        
         <div class="form-group">
           <label for="password">Password</label>
           <input [type]="isPasswordVisible ? 'text' : 'password'"
            class="form-control" name="pwd" id="pwd" formControlName="pwd"
-           [class.is-invalid]="password?.invalid && (password?.dirty || password?.touched)">
-           <div *ngIf="password?.invalid && (password?.dirty || password?.touched)"  class="invalid-feedback">
-            <div *ngIf="password?.errors?.['required']">
-             Password is required
-             </div>
-           </div>
+          >
         </div>
         <!-- <span *ngIf="(loginfrm.controls.pwd.touched)" class="error-msg">Password is required</span> -->
         <span (click)="passwordVisibility()" class="pass-icon">

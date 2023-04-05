@@ -1,0 +1,40 @@
+<p>dynamicform works!</p>
+<div [formGroup]="form">
+    <div *ngFor="let d of formFields">
+        <div *ngIf="d.type!=='radio'">
+            <label [for]="d.name">{{d.label}}</label>
+        <input [type]="d.type" [formControlName]="d.name"/>
+        </div>
+        <div *ngIf="d.type==='radio'">
+            <div *ngFor="let e of d.options">
+                <input type="radio" [value]="e" [formControlName]="d.name" [name]="d.name"/>
+                <label>{{e}}</label>
+              </div>
+        </div>
+    </div>
+    <button (click)="onSubmit()">click</button>
+</div>
+<main>
+    <button>check</button>
+</main><br>
+
+<div><button (click)="addrows()">add rows</button></div>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">name</th>
+        <th scope="col">email</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let r of row let i = index">
+        <td><input type="text"  #data></td>
+        <td><input type="text" #data></td>
+        <td><input type="text" #data></td>
+        <button (click)="delete()">clear</button>
+      </tr>
+    </tbody>
+  </table>

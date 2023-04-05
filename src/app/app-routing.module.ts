@@ -15,6 +15,8 @@ import { AboutComponent } from './about/about.component';
 import { NavComponent } from './nav/nav.component';
 import {CactivateGuard} from './cactivate.guard';
 import { DragndropComponent } from './dragndrop/dragndrop.component';
+import { DynamicformComponent } from './dynamicform/dynamicform.component';
+
 
 
 
@@ -33,7 +35,9 @@ const routes: Routes = [
   {path: "EditComponent/:id", component:EditComponent, canActivate:[CactivateGuard]},
   {path: "AboutComponent", component:AboutComponent, canActivate:[CactivateGuard]},
   {path: "nav", component:NavComponent},
-  {path: "dragndrop", component:DragndropComponent}
+  {path: "dragndrop", component:DragndropComponent},
+  {path: "dynamicform", component:DynamicformComponent},
+ 
   
 ];
 
