@@ -14,6 +14,7 @@ export class ListviewComponent implements OnInit {
 
   search2 = '';
   activatedRoute: any;
+  // sortDir: number;
 
   constructor(private service: ServiceService, private _router: Router, _activated: ActivatedRoute) { }
   customerdata: any;
@@ -44,5 +45,22 @@ export class ListviewComponent implements OnInit {
     this._router.navigate(["/OrdersComponent"])
   }
 
+  // onSortClick(event:any){
+  //  let target = event.currentTarget;
+  //  const classList = target.classList;
+   
+  //  if (classList.contains('fa-chevron-up')) {
+  //   classList.remove('fa-chevron-up');
+  //   classList.add('fa-chevron-down');
+  //   this.sortDir=-1;
+  // } else {
+  //   classList.add('fa-chevron-up');
+  //   classList.remove('fa-chevron-down');
+  //   this.sortDir=1;
+  // }
+  // this.sortArr('fname');
+
+  // }
+ 
 
 }

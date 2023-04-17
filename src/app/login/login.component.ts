@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   showNotification: any;
   isPasswordVisible: boolean = false;
  
- 
+  isdisabled= true;
 
   constructor(private router:Router, private srvc:LoginService) { }
 
@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
 
   CheckUser(){
     var res = this.srvc.ValidateUser(this.loginfrm.value.uname, this.loginfrm.value.pwd);
+    
     if(res){
      localStorage.setItem("uname", JSON.stringify(this.loginfrm.value.uname));
      localStorage.setItem("pwd", JSON.stringify(this.loginfrm.value.pwd));

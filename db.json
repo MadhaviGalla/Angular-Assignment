@@ -53,30 +53,6 @@
       "longitude": -122.331
     },
     {
-      "id": 4,
-      "firstName": "Tina",
-      "lastName": "Adams",
-      "gender": "female",
-      "address": "79455 Pinetop Way",
-      "city": "Chandler",
-      "state": {
-        "abbreviation": "AZ",
-        "name": " Arizona "
-      },
-      "orders": [
-        {
-          "productName": "Budgie Smugglers",
-          "itemCost": 19.99
-        },
-        {
-          "productName": "Swimming Cap",
-          "itemCost": 5.49
-        }
-      ],
-      "latitude": 33.299,
-      "longitude": -111.963
-    },
-    {
       "id": 5,
       "firstName": "Igor",
       "lastName": "Minar",

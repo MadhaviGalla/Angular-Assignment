@@ -28,7 +28,7 @@ export class CardviewComponent implements OnInit {
   data: any
 
   getData() {
-    this.service.getcustomer().subscribe(data => {
+    this.service.getcustomer().subscribe((data) => {
       this.data = data
       
     })

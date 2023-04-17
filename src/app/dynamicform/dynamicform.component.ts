@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ServiceService } from '../dynamic/service.service';
 
 @Component({
   selector: 'app-dynamicform',
@@ -8,9 +10,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class DynamicformComponent implements OnInit {
 
-  @ViewChild('data') inputdata: any;
+  @ViewChild('data1') inputdata1: any;
+  @ViewChild('data2') inputdata2: any;
+  @ViewChild('data3') inputdata3: any;
 
   form!: FormGroup;
+  formData!: FormGroup
 
   formFields: any = [
     {
@@ -53,10 +58,11 @@ export class DynamicformComponent implements OnInit {
     }
   ];
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, 
+    private router:ActivatedRoute,
+    private service: ServiceService) { }
 
   ngOnInit(): void {
-
     const formControls: any = {};
     this.formFields.forEach((field: any) => {
       formControls[field.name] = ['', field.validators];
@@ -78,17 +84,35 @@ export class DynamicformComponent implements OnInit {
   }
 
   delete() {
-    this.inputdata.nativeElement.value = '';
-    console.log(this.inputdata);
+    let d = confirm("are u want to delte");
+   if(d==true){
+    this.inputdata1.nativeElement.value = '';
+    this.inputdata2.nativeElement.value = '';
+   this.inputdata3.nativeElement.value= '';
+   }
     // var deletebtn = confirm('do you want to delete');
     // if (deletebtn == true) {
     //   this.row.splice(event, 1)
     // }
   }
+  myData: string = '';
 
+  // onInputChange(event: Event) {
+  //   this.myData = '';
+  // }
 
+  deleteData(){
+   this.myData = ''
+  }
 
+ 
 
+  user = '';
+  newUser = ''
+
+  ediUser(){
+
+  }
 
 
 }

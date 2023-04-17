@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Customers } from '../customers';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -13,7 +14,11 @@ export class ServiceService {
     console.log(data))
   }
 
-  getcustomer() {
+  ngOnInit(): void{
+   
+  }
+
+  getcustomer(): Observable<any>{
     return this.http.get("http://localhost:3000/customers");
   }
 

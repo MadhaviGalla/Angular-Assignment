@@ -20,7 +20,9 @@
 
 <div><button (click)="addrows()">add rows</button></div>
 
-<table class="table">
+
+
+  <table class="table">
     <thead>
       <tr>
         <th scope="col">id</th>
@@ -31,10 +33,22 @@
     </thead>
     <tbody>
       <tr *ngFor="let r of row let i = index">
-        <td><input type="text"  #data></td>
-        <td><input type="text" #data></td>
-        <td><input type="text" #data></td>
+        <td><input type="text"  #data1></td>
+        <td><input type="text" #data2></td>
+        <td><input type="text" #data3></td>
         <button (click)="delete()">clear</button>
       </tr>
     </tbody>
   </table>
+
+  <div>
+    <input [(ngModel)]="myData">
+    <button (click)="deleteData()">delete</button>
+  </div>
+
+  <!-- <div>
+    <input type="text" ngModel="newUser">
+    <button (click)="ediUser()">change</button>
+  </div> -->
+
+  
