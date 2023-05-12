@@ -1,7 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { ServiceService } from '../dynamic/service.service';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-dynamicform',
@@ -58,9 +59,17 @@ export class DynamicformComponent implements OnInit {
     }
   ];
 
-  constructor(private fb: FormBuilder, 
-    private router:ActivatedRoute,
-    private service: ServiceService) { }
+  constructor(private fb: FormBuilder,
+    private router: ActivatedRoute,
+    private service: ServiceService) {
+
+      this.exampleForm.valueChanges.subscribe((value)=>{
+        this.formValuSubject.next(value);
+        console.log(value, "name")
+      })
+
+     
+     }
 
   ngOnInit(): void {
     const formControls: any = {};
@@ -68,6 +77,8 @@ export class DynamicformComponent implements OnInit {
       formControls[field.name] = ['', field.validators];
     });
     this.form = this.fb.group(formControls);
+
+    this.check()
   }
 
   onSubmit() {
@@ -85,11 +96,11 @@ export class DynamicformComponent implements OnInit {
 
   delete() {
     let d = confirm("are u want to delte");
-   if(d==true){
-    this.inputdata1.nativeElement.value = '';
-    this.inputdata2.nativeElement.value = '';
-   this.inputdata3.nativeElement.value= '';
-   }
+    if (d == true) {
+      this.inputdata1.nativeElement.value = '';
+      this.inputdata2.nativeElement.value = '';
+      this.inputdata3.nativeElement.value = '';
+    }
     // var deletebtn = confirm('do you want to delete');
     // if (deletebtn == true) {
     //   this.row.splice(event, 1)
@@ -101,18 +112,81 @@ export class DynamicformComponent implements OnInit {
   //   this.myData = '';
   // }
 
-  deleteData(){
-   this.myData = ''
+  deleteData() {
+    this.myData = ''
   }
-
- 
 
   user = '';
   newUser = ''
 
-  ediUser(){
+  ediUser() {
 
+  }
+  /////////////////////////////////////////////
+
+  items: any = ['apple', 'banana', 'cherry'];
+
+  removeItem(i: string) {
+    const index = this.items.indexOf(i)
+    if (index! == -1) {
+      this.items.splice(index, 2)
+    }
+    else {
+      alert()
+    }
   }
 
 
+  originalObject = {
+    name: 'John',
+    age: 30,
+    address: {
+      street: '123 Main St',
+      city: 'New York',
+      state: 'NY'
+    }
+  };
+  clonedObject = JSON.parse(JSON.stringify(this.originalObject));
+
+  convert() {
+    this.clonedObject.name = 'Jane';
+    this.clonedObject.address.street = '456 Elm St';
+
+    console.log(this.originalObject, "originalObject");
+    console.log(this.clonedObject, "clonedObject");
+
+
+  }
+  ////////////////////////////
+
+ person:any = {
+    name: 'Alice',
+    age: 30,
+    occupation: 'Engineer'
+  };
+
+check(){
+  for (const key of Object.keys(this.person)) {
+    console.log(`${key}: ${this.person[key]}`);
+    
+  }
+}
+
+
+
+
+  //////////////////
+
+  formValuSubject = new Subject<any>()
+
+  exampleForm = new FormGroup({
+    name: new FormControl(),
+    age: new FormControl()
+  })
+
+  nameChanges$ = this.exampleForm.get('name')?.valueChanges
+  ageChanges$ = this.exampleForm.get('age')?.valueChanges;
+
+
+  
 }

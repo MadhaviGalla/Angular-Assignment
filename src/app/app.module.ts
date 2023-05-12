@@ -32,59 +32,26 @@ import { EditComponent } from './edit/edit.component';
 import { AboutComponent } from './about/about.component';
 import { NavComponent } from './nav/nav.component';
 import { ReactiveFormsModule } from '@angular/forms'
-import { NotifierModule, NotifierOptions } from 'angular-notifier';
 import { DragndropComponent } from './dragndrop/dragndrop.component';
 import { ColumnsComponent } from './columns/columns.component';
 import { TableComponent } from './table/table.component';
 import { DynamicformComponent } from './dynamicform/dynamicform.component';
 import { Login2Component } from './login2/login2.component';
-
+import { EventsComponent } from './events/events.component';
+ import { SimpleNotificationsModule } from 'angular2-notifications';
+ import * as echarts from 'echarts';
+ import {NotificationComponent} from './notification/notification.component';
+import { ChartsComponent } from './charts/charts.component' 
 declare module 'googlemaps';
 
-const customNotifierOptions: NotifierOptions = {
-  position: {
-		horizontal: {
-			position: 'left',
-			distance: 12
-		},
-		vertical: {
-			position: 'bottom',
-			distance: 12,
-			gap: 10
-		}
-	},
-  theme: 'material',
-  behaviour: {
-    autoHide: 5000,
-    onClick: 'hide',
-    onMouseover: 'pauseAutoHide',
-    showDismissButton: true,
-    stacking: 4
-  },
-  animations: {
-    enabled: true,
-    show: {
-      preset: 'slide',
-      speed: 300,
-      easing: 'ease'
-    },
-    hide: {
-      preset: 'fade',
-      speed: 300,
-      easing: 'ease',
-      offset: 50
-    },
-    shift: {
-      speed: 300,
-      easing: 'ease'
-    },
-    overlap: 150
-  }
-};
+import { NgxEchartsModule } from 'ngx-echarts';
+import { LineChartComponent } from './line-chart/line-chart.component';
+
 
 
 @NgModule({
   declarations: [
+ 
     AppComponent,
     TestComponent,
     CustomersdataComponent,
@@ -106,9 +73,10 @@ const customNotifierOptions: NotifierOptions = {
     TableComponent,
     DynamicformComponent,
     Login2Component,
-
-
-
+    EventsComponent,
+    NotificationComponent,
+    ChartsComponent,
+    LineChartComponent
   ],
   imports: [
     BrowserModule,
@@ -119,7 +87,11 @@ const customNotifierOptions: NotifierOptions = {
     FormsModule,
     BrowserAnimationsModule,
     MatToolbarModule, MatIconModule, MatButtonModule, GoogleMapsModule, ReactiveFormsModule,
-    NotifierModule.withConfig(customNotifierOptions)
+    SimpleNotificationsModule.forRoot(),
+    NgxEchartsModule.forRoot({
+      echarts: () => import('echarts'),
+    }),
+  
 
   ],
   providers: [ServiceService],

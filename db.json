@@ -2,11 +2,12 @@
   "customers": [
     {
       "id": 2,
-      "firstName": "Michelle",
+      "firstName": "Michellehjk",
       "lastName": "Thompson",
       "gender": "female",
       "address": "345 Cedar Point Ave.",
       "city": "Encinitas ",
+      "value": 10,
       "state": {
         "abbreviation": "CA",
         "name": "California"
@@ -31,6 +32,7 @@
       "gender": "male",
       "address": "1822 Long Bay Dr.",
       "city": " Seattle ",
+      "value": 30,
       "state": {
         "abbreviation": "WA",
         "name": "Washington"
@@ -59,6 +61,7 @@
       "gender": "male",
       "address": "576 Crescent Blvd.",
       "city": " Dallas",
+      "value": 60,
       "state": {
         "abbreviation": "TX",
         "name": "Texas"
@@ -83,6 +86,7 @@
       "gender": "male",
       "address": "9874 Center St.",
       "city": "Orlando ",
+      "value": 70,
       "state": {
         "abbreviation": "FL",
         "name": "Florida"
@@ -107,6 +111,7 @@
       "gender": "male",
       "address": "9812 Builtway Appt #1",
       "city": "Carey ",
+      "value": 90,
       "state": {
         "abbreviation": "NC",
         "name": "North Carolina"
@@ -135,6 +140,7 @@
       "gender": "female",
       "address": "4651 Tuvo St.",
       "city": "Anaheim",
+      "value": 100,
       "state": {
         "abbreviation": "CA",
         "name": "California"
@@ -159,6 +165,7 @@
       "gender": "male",
       "address": "66 Ray St.",
       "city": " Orlando",
+      "value": 190,
       "state": {
         "abbreviation": "FL",
         "name": "Florida"
@@ -183,6 +190,7 @@
       "gender": "female",
       "address": "1455 Chandler Blvd.",
       "city": " Atlanta",
+      "value": 20,
       "state": {
         "abbreviation": "GA",
         "name": "Georgia"

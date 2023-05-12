@@ -16,6 +16,9 @@ import { NavComponent } from './nav/nav.component';
 import {CactivateGuard} from './cactivate.guard';
 import { DragndropComponent } from './dragndrop/dragndrop.component';
 import { DynamicformComponent } from './dynamicform/dynamicform.component';
+import { EventsComponent } from './events/events.component';
+import { NotificationComponent } from 'angular2-notifications';
+import { LineChartComponent } from './line-chart/line-chart.component';
 
 
 
@@ -37,8 +40,9 @@ const routes: Routes = [
   {path: "nav", component:NavComponent},
   {path: "dragndrop", component:DragndropComponent},
   {path: "dynamicform", component:DynamicformComponent},
- 
-  
+  {path: "events", component:EventsComponent},
+  {path: "notification", component:NotificationComponent},
+  {path: "line", component:LineChartComponent}
 ];
 
 

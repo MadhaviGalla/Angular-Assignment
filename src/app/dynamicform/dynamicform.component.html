@@ -46,9 +46,22 @@
     <button (click)="deleteData()">delete</button>
   </div>
 
-  <!-- <div>
-    <input type="text" ngModel="newUser">
-    <button (click)="ediUser()">change</button>
-  </div> -->
+ <ng-container>
+  <ul>
+    <li *ngFor="let i of items">
+      <strong>{{i}}</strong>
+    </li>
+  </ul>
+  <button (click)="removeItem(items)">Remove</button>
+ </ng-container>
 
-  
+ <button (click)="convert()">convert</button>
+
+<div>
+  <form [formGroup]="exampleForm">
+    <input type="text" formControlName="name">
+    <input type="text" formControlName="age">
+  </form>
+</div>
+
+<app-charts></app-charts>

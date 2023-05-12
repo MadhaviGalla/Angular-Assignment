@@ -1,0 +1,33 @@
+.simple-notification.success {
+    background: #dff2bf !important;
+    color: #4f8a10 !important;
+  }
+  .simple-notification.info {
+    background: #d9edf7 !important;
+    color: #31708f !important;
+  }
+  
+  .simple-notification.alert {
+    background: #feefb3 !important;
+    color: #9f6000 !important;
+  }
+  
+  .simple-notification.error {
+    background: #ffbaba !important;
+    color: #d8000c !important;
+  }
+  
+  .simple-notification .sn-content {
+    font-size: 14px !important;
+    line-height: 20px !important;
+  }
+  
+  .simple-notification .sn-title {
+    line-height: 30px !important;
+    font-size: 16px !important;
+  }
+  
+  .simple-notification-wrapper {
+    width: 350px !important;
+  }
+  

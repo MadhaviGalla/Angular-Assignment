@@ -9,9 +9,11 @@ import { Observable } from 'rxjs';
 })
 export class ServiceService {
 
+  data:any
   constructor(private http: HttpClient) {
     this.http.get("http://localhost:3000/customers").subscribe(data =>
-    console.log(data))
+    this.data = data)
+    // console.log(data))
   }
 
   ngOnInit(): void{

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import {LoginService} from '../login.service';
-import { NotifierModule } from 'angular-notifier';
+//import { NotifierModule } from 'angular-notifier';
 
 @Component({
   selector: 'app-login',
@@ -53,7 +53,7 @@ export class LoginComponent implements OnInit {
   get password(){
     return this.loginfrm.get('pwd');
   }
-  
+;
  
 
 }
